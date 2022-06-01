@@ -1,0 +1,107 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Consolidacion" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="4. Consolidación">
+		<customHeader>
+		<Bar class="barLogo">
+		<contentLeft>
+		<Button   type="Back" press="handlePressConfiguration"/>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+		<content>
+							<Bar>
+		<contentLeft>
+		<Text text = "4. Consolidación"></Text>
+		</contentLeft>
+		
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar  class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter  icon="sap-icon://create-form" text="Ejecutar Consolidación" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="40. Consolidación" press="onDowload('40 Consolidación.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator />
+                    <IconTabFilter  icon="sap-icon://create-form" text="Inputs" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="50. Reclasificaciones entidad consolidada" press="onDowload('50 Reclasificaciones entidad consolidada.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator />
+                    <IconTabFilter  icon="sap-icon://create-form" text="Reportes" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="43. Consolidación- Inversión vs Patrimonio" press="onDowload('43 Consolidación- Inversión vs Patrimonio.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="44. Interés Minoritario" press="onDowload('44 Interés Minoritario.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                  <ColumnListItem>
+									<cells>
+										<Link text="45. Consolidación - Datos Intercompany" press="onDowload('45 Consolidación - Datos Intercompany.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                  <ColumnListItem>
+									<cells>
+										<Link text="47. Estados Financieros" press="onDowload('47 Estados Financieros.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="48. Estado de Situación Financiera por Entidad" press="onDowload('48 Estado de Situación Financiera por Entidad.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="49. Estado de Resultados por Entidad" press="onDowload('49 Estado de Resultados por Entidad.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                   
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

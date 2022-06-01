@@ -1,0 +1,74 @@
+<mvc:View controllerName="valoremapp.ValoremAppHTML.controller.mainMenu" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f" xmlns:u="sap.ui.unified" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout" height="100%">
+	<!--<f:ShellBar title="" secondTitle="intranet" homeIcon="./img/valorem_icon.png" showNavButton="true" class="shell">-->
+	<!--</f:ShellBar>-->
+	<App>
+    
+		<Page>
+        <customHeader>
+        <Bar class="barLogo">
+		<contentLeft>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+        <Bar>
+		<contentLeft>
+		</contentLeft>
+		</Bar>
+							
+		<content>
+	<GenericTile id="TileConsolidacion" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Proceso de Consolidación Estados Financieros " press="press_consolidacion">
+		<TileContent >
+			<ImageContent src="sap-icon://process"/>
+		</TileContent>
+	</GenericTile>
+    <GenericTile id="TileConsolidadas" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Elaboración Notas Consolidadas" press="press_notasConsolidadas">
+		<TileContent >
+			<ImageContent src="sap-icon://notes"/>
+		</TileContent>
+	</GenericTile>
+    	<GenericTile id="TileIndividuales" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Reportes financieros y otros reportes Compañías del Grupo" press="press_notasFinancieros">
+		<TileContent >
+			<ImageContent src="sap-icon://expense-report"/>
+		</TileContent>
+	</GenericTile>
+	<GenericTile id="TileInformeJuntas" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Informe de Junta" press="press_informeJunta">
+		<TileContent >
+			<ImageContent src="sap-icon://manager-insight"/>
+		</TileContent>
+	</GenericTile>
+    <GenericTile id="TilePlaneacion" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Planeación Financiera" press="press">
+		<TileContent >
+			<ImageContent src="sap-icon://legend"/>
+		</TileContent>
+	</GenericTile>
+	<GenericTile id="TileOtrosInformesValorem" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Otros Informes VALOREM" press="press_informesValorem">
+		<TileContent >
+			<ImageContent src="sap-icon://add-activity"/>
+		</TileContent>
+	</GenericTile>
+	<GenericTile id="TileInformesRefocosta" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Otros Informes Refocosta" press="press">
+		<TileContent >
+			<ImageContent src="sap-icon://add-coursebook"/>
+		</TileContent>
+	</GenericTile>
+	<GenericTile id="TileOtrosKoba" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Otros KOBA" press="press">
+		<TileContent >
+			<ImageContent src="sap-icon://add-product"/>
+		</TileContent>
+	</GenericTile>
+	<GenericTile id="TileOtrosCaracol" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Informe de Junta Caracol TV" press="press_informesCaracol">
+		<TileContent >
+			<ImageContent src="sap-icon://create-entry-time"/>
+		</TileContent>
+	</GenericTile>
+	</content>
+	</Page>
+	</App>
+</mvc:View>

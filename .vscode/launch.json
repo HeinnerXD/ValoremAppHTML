@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Portal Local",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/valoremapphtml-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/valoremappValoremAppHTML/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/ValoremAppHTML",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/ValoremAppHTML/ValoremAppHTML\"}"
+      },
+      "envFile": "${workspaceFolder}/ValoremAppHTML/.env7",
+      "preLaunchTask": "Build ValoremAppHTML"
+    }
+  ]
+}

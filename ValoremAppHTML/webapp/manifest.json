@@ -1,0 +1,479 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "valoremapp.ValoremAppHTML",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "ui5template.basicSAPUI5ApplicationProject",
+            "version": "1.40.12"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "valoremapp.ValoremAppHTML.view.root",
+            "type": "HTML",
+            "async": true,
+            "id": "login"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "valoremapp.ValoremAppHTML.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "HTML",
+                "async": true,
+                "viewPath": "valoremapp.ValoremAppHTML.view",
+                "controlAggregation": "pages",
+                "controlId": "root_v",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "login",
+                    "pattern": "",
+                    "target": [
+                        "login"
+                    ]
+                },
+                {
+                    "name": "CambiarClave",
+                    "pattern": "CambiarClave",
+                    "target": [
+                        "CambiarClave"
+                    ]
+                },
+                {
+                    "name": "UnlockUser",
+                    "pattern": "UnlockUser",
+                    "target": [
+                        "UnlockUser"
+                    ]
+                },
+                {
+                    "name": "Proceso_Consolidacion",
+                    "pattern": "Proceso_Consolidacion/{roles}",
+                    "target": [
+                        "Proceso_Consolidacion"
+                    ]
+                },
+                {
+                    "name": "mainMenu",
+                    "pattern": "mainMenu/{roles}",
+                    "target": [
+                        "mainMenu"
+                    ]
+                },
+                {
+                    "name": "NotasFinancieros",
+                    "pattern": "NotasFinancieros/{roles}",
+                    "target": [
+                        "NotasFinancieros"
+                    ]
+                },
+                {
+                    "name": "InformeJunta",
+                    "pattern": "InformeJunta/{roles}",
+                    "target": [
+                        "InformeJunta"
+                    ]
+                },
+                {
+                    "name": "InformesValorem",
+                    "pattern": "InformesValorem/{roles}",
+                    "target": [
+                        "InformesValorem"
+                    ]
+                },
+                {
+                    "name": "NotasConsolidadas",
+                    "pattern": "NotasConsolidadas/{roles}",
+                    "target": [
+                        "NotasConsolidadas"
+                    ]
+                },
+                {
+                    "name": "reportesFinancieros",
+                    "pattern": "reportesFinancieros/{roles}",
+                    "target": [
+                        "reportesFinancieros"
+                    ]
+                },
+                {
+                    "name": "estadosFinancieros",
+                    "pattern": "estadosFinancieros/{roles}",
+                    "target": [
+                        "estadosFinancieros"
+                    ]
+                },
+                {
+                    "name": "InformesCaracol",
+                    "pattern": "InformesCaracol/{roles}",
+                    "target": [
+                        "InformesCaracol"
+                    ]
+                },
+                {
+                    "name": "GenerarConcepto",
+                    "pattern": "GenerarConcepto/{roles}",
+                    "target": [
+                        "GenerarConcepto"
+                    ]
+                },
+                {
+                    "name": "IndicadoresFinancieros",
+                    "pattern": "IndicadoresFinancieros/{roles}",
+                    "target": [
+                        "IndicadoresFinancieros"
+                    ]
+                },
+                {
+                    "name": "GenerarFinal",
+                    "pattern": "GenerarFinal/{roles}",
+                    "target": [
+                        "GenerarFinal"
+                    ]
+                },
+                {
+                    "name": "cargueInicial",
+                    "pattern": "cargueInicial/{roles}",
+                    "target": [
+                        "cargueInicial"
+                    ]
+                },
+                {
+                    "name": "generarInformeJunta",
+                    "pattern": "generarInformeJunta/{roles}",
+                    "target": [
+                        "generarInformeJunta"
+                    ]
+                },
+                {
+                    "name": "comentariosAreas",
+                    "pattern": "comentariosAreas/{roles}",
+                    "target": [
+                        "comentariosAreas"
+                    ]
+                },
+                {
+                    "name": "comentariosGenerales",
+                    "pattern": "comentariosGenerales/{roles}",
+                    "target": [
+                        "comentariosGenerales"
+                    ]
+                },
+                {
+                    "name": "redondeoCifras",
+                    "pattern": "redondeoCifras/{roles}",
+                    "target": [
+                        "redondeoCifras"
+                    ]
+                },
+                {
+                    "name": "parametrizacion",
+                    "pattern": "parametrizacion/{roles}",
+                    "target": [
+                        "parametrizacion"
+                    ]
+                },
+                {
+                    "name": "mainMenuEstFinanciero",
+                    "pattern": "mainMenuEstFinanciero/{roles}",
+                    "target": [
+                        "mainMenuEstFinanciero"
+                    ]
+                },
+                {
+                    "name": "FAdministracion",
+                    "pattern": "FAdministracion/{roles}",
+                    "target": [
+                        "FAdministracion"
+                    ]
+                },
+                {
+                    "name": "FCargaDatos",
+                    "pattern": "FCargaDatos/{roles}",
+                    "target": [
+                        "FCargaDatos"
+                    ]
+                },
+                {
+                    "name": "FConciliacion",
+                    "pattern": "FConciliacion/{roles}",
+                    "target": [
+                        "FConciliacion"
+                    ]
+                },
+                {
+                    "name": "FConsolidación",
+                    "pattern": "FConsolidación/{roles}",
+                    "target": [
+                        "FConsolidación"
+                    ]
+                },
+                {
+                    "name": "FReportes",
+                    "pattern": "FReportes/{roles}",
+                    "target": [
+                        "FReportes"
+                    ]
+                }
+            ],
+            "targets": {
+                "login": {
+                    "viewType": "HTML",
+                    "viewName": "login",
+                    "parent": "root",
+                    "viewLevel": 1
+                },
+                "CambiarClave": {
+                    "controlId": "",
+                    "parent": "login",
+                    "viewType": "HTML",
+                    "viewName": "CambiarClave",
+                    "viewLevel": 2
+                },
+                "UnlockUser": {
+                    "controlId": "",
+                    "parent": "login",
+                    "viewType": "HTML",
+                    "viewName": "UnlockUser",
+                    "viewLevel": 2
+                },
+                "Proceso_Consolidacion": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "Proceso_Consolidacion",
+                    "parent": "login",
+                    "viewLevel": 4
+                },
+                "root": {
+                    "viewType": "HTML",
+                    "viewName": "root"
+                },
+                "mainMenu": {
+                    "viewType": "XML",
+                    "viewName": "mainMenu",
+                    "viewLevel": 3
+                },
+                "NotasFinancieros": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "NotasFinancieros",
+                    "parent": "login",
+                    "viewLevel": 5
+                },
+                "InformeJunta": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "InformeJunta",
+                    "parent": "login",
+                    "viewLevel": 6
+                },
+                "InformesValorem": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "InformesValorem",
+                    "parent": "login",
+                    "viewLevel": 7
+                },
+                "NotasConsolidadas": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "NotasConsolidadas",
+                    "parent": "login",
+                    "viewLevel": 8
+                },
+                "reportesFinancieros": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "reportesFinancieros",
+                    "parent": "login",
+                    "viewLevel": 9
+                },
+                "estadosFinancieros": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "estadosFinancieros",
+                    "parent": "login",
+                    "viewLevel": 10
+                },
+                "InformesCaracol": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "InformesCaracol",
+                    "parent": "login",
+                    "viewLevel": 11
+                },
+                "GenerarConcepto": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "GenerarConcepto",
+                    "parent": "login",
+                    "viewLevel": 12
+                },
+                "IndicadoresFinancieros": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "IndicadoresFinancieros",
+                    "parent": "login",
+                    "viewLevel": 13
+                },
+                "GenerarFinal": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "GenerarFinal",
+                    "parent": "login",
+                    "viewLevel": 14
+                },
+                "cargueInicial": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "cargueInicial",
+                    "parent": "login",
+                    "viewLevel": 15,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.informeJunta"
+                },
+                "generarInformeJunta": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "generarInformeJunta",
+                    "parent": "login",
+                    "viewLevel": 16,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.informeJunta"
+                },
+                "comentariosAreas": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "comentariosAreas",
+                    "parent": "login",
+                    "viewLevel": 17,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.informeJunta"
+                },
+                "comentariosGenerales": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "comentariosGenerales",
+                    "parent": "login",
+                    "viewLevel": 18,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.informeJunta"
+                },
+                "redondeoCifras": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "redondeoCifras",
+                    "parent": "login",
+                    "viewLevel": 19,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.informeJunta"
+                },
+                "parametrizacion": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "parametrizacion",
+                    "parent": "login",
+                    "viewLevel": 20,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.informeJunta"
+                },
+                "mainMenuEstFinanciero": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "MainViewEstFinanciero",
+                    "parent": "login",
+                    "viewLevel": 21,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                },
+                "FAdministracion": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "Administracion",
+                    "parent": "login",
+                    "viewLevel": 22,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                },
+                "FCargaDatos": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "CargaDatos",
+                    "parent": "login",
+                    "viewLevel": 23,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                },
+                "FConciliacion": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "Conciliacion",
+                    "parent": "login",
+                    "viewLevel": 24,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                },
+                "FConsolidación": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "Consolidacion",
+                    "parent": "login",
+                    "viewLevel": 25,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                },
+                "FReportes": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "Reportes",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    }
+}

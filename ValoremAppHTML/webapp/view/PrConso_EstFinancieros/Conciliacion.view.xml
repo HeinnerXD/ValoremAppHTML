@@ -1,0 +1,102 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Conciliacion" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="3. Conciliación">
+		<customHeader>
+		<Bar class="barLogo">
+		<contentLeft>
+		<Button   type="Back" press="handlePressConfiguration"/>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+		<content>
+							<Bar>
+		<contentLeft>
+		<Text text = "3. Conciliación"></Text>
+		</contentLeft>
+		
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar  class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter  icon="sap-icon://create-form" text="Ejecutar Conciliación" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="31 Conciliación Balance y PyG" press="onDowload('31 Conciliación Balance y PyG.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator />
+                    <IconTabFilter  icon="sap-icon://create-form" text="Inputs" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="IF02 Ingreso Reclasificación por Cuenta" press="onDowload('IF02_INGRESRECLAXCUENTA.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Plantilla Journal" press="onDowload('PLANTILLA_JOURNAL.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator />
+                    <IconTabFilter  icon="sap-icon://create-form" text="Reportes" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="32. Conciliación Inversiones" press="onDowload('32 Conciliación Inversiones.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="33. Reclasificaciones y otros" press="onDowload('33 Reclasificaciones y otros.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                  <ColumnListItem>
+									<cells>
+										<Link text="34. Composición Accionaria" press="onDowload('34 Composición Accionaria.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                  <ColumnListItem>
+									<cells>
+										<Link text="RP02 Conciliación GyP" press="onDowload('RP02_CONCILIACION_GYP_JUN2020-1RA VERSION_COPIA_CTA.xlsx')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                   
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,128 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.informeJunta.generarInformeJunta" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Generación de Informe de Junta">
+		<customHeader>
+		<Bar class="barLogo">
+		<contentLeft>
+		<Button   type="Back" press="handlePressConfiguration"/>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+		<content>
+							<Bar>
+		<contentLeft>
+		<Text text = "2.Generación de informe de Junta"></Text>
+		</contentLeft>
+		
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar id="idIconTabBar" class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter id="idIconTabMetodoParticipacion" icon="sap-icon://create-form" text="2.1. Método de participación" key="Preparacion" design="Horizontal">
+						<Table id="idMetodoParticipacionTable">
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="2.1.1. Calcular Método de Participación" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.1. Método de Participación','2.1.1. Calcular Método de Participación.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="2.1.2. Detallar Método de Participación" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.1. Método de Participación','2.1.2. Detallar Método de Participación.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator id="idSeparatorMetodoParticipacion"/>
+                    <IconTabFilter id="idAsignacionSubconceptos" icon="sap-icon://create-form" text="2.2. Asignación subconceptos" key="Preparacion" design="Horizontal">
+						<Table id="idAsignacionSubconceptosTable">
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="2.2.1. Asignar subconceptos a cuentas contables" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.2. Asignación subconceptos','2.2.1. Asignar subconceptos a cuentas contables.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="2.2.2. Detallar conceptos por saldo" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.2. Asignación subconceptos','2.2.2. Detallar conceptos por saldo.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="2.2.3. Reclasificaciones" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.2. Asignación subconceptos','2.2.3. Reclasificaciones.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="2.2.4. Detallar Diferencia en Cambio" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.2. Asignación subconceptos','2.2.4. Detallar Diferencia en Cambio.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator id="idSeparatorAsignacionSubconceptos"/>
+                    <IconTabFilter id="idIconTabDetalleBalance" icon="sap-icon://create-form" text="2.3. Detalle Variación Balance" key="Preparacion" design="Horizontal">
+						<Table id="idDetalleBalanceTable">
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="2.3.1. Detallar variación en Balance General" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.3. Detalle Variación Balance','2.3.1. Detallar variación en Balance General.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator id="idSeparatorCreate"/>
+                    <IconTabFilter id="idIconTabValidacionCifras" icon="sap-icon://create-form" text="2.4. Validación cifras" key="Preparacion" design="Horizontal">
+						<Table id="idValidacionCifrasTable">
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="2.4.1. Repote de Balance General" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.4. Validación cifras','2.4.1. Reporte de Balance General.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="2.4.2. Repote de Estado de Resultados" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.4. Validación cifras','2.4.2. Reporte de Estado de Resultados.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="2.4.3. Estado de Situación Financiera por Tercero" press="onDowload('03. INFORME DE JUNTA/PRODUCCION/02. Generación de Informe de Junta/2.4. Validación cifras','2.4.3. Estado de Situación Financiera por Tercero.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

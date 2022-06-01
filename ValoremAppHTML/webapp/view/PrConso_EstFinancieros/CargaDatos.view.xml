@@ -1,0 +1,122 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.CargaDatos" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="2. Carga de Datos">
+		<customHeader>
+		<Bar class="barLogo">
+		<contentLeft>
+		<Button   type="Back" press="handlePressConfiguration"/>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+		<content>
+							<Bar>
+		<contentLeft>
+		<Text text = "2. Carga de Datos"></Text>
+		</contentLeft>
+		
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter  icon="sap-icon://create-form" text="Matriz de Inversión" key="Preparacion" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="10. Matriz de Inversiones" press="onDowload('10 Matriz de Inversiones.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator />
+                    <IconTabFilter  icon="sap-icon://create-form" text="Tasas de Cambio" key="Preparacion" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="16. Tasas de Conversión" press="onDowload('16 Tasas de Conversión.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator/>
+                    <IconTabFilter icon="sap-icon://create-form" text="Cargue de Información" key="Preparacion" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="11. Ecuación Contable y Método" press="onDowload('11 Ecuación Contable y método.xltm')"/>
+									</cells>
+									<cells>
+										<Link text="21. Plantilla Cargue información Financiera" press="onDowload('21 Plantilla cargue Info Fciera.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator/>
+                    <IconTabFilter icon="sap-icon://create-form" text="Reportes" key="Preparacion" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="12. Validación Intercompany" press="onDowload('12 Validación Intercompany.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="13. Variación Patrimonial" press="onDowload('13 Variación Patrimonial.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="14. Validación Cuentas Origen" press="onDowload('14 Validación cuentas origen.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="15 Validar Conversión de Moneda" press="onDowload('15 Validar conversión de moneda.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                                                
+                                <ColumnListItem>
+									<cells>
+										<Link text="Estado Situación Financiera" press="onDowload('RP01_ESTADO_SITUACION_FINANCIERA_IND_X_COMP.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

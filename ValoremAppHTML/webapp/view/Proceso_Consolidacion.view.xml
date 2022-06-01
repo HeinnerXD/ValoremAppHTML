@@ -1,0 +1,212 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.Proceso_Consolidacion" xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<!--<Panel height='49px'></Panel>-->
+	<!--<Panel class="panelClass" height="53px">-->
+	<!--	<Text class="textClass" text="Proceso de Consolidación Estados Financieros"></Text>-->
+	<!--</Panel>-->
+	<Page title="Proceso de Consolidación Estados Financieros">
+		<customHeader>
+		<Bar class="barLogo">
+		    <contentLeft>
+		    <Button   type="Back" press="handlePressConfiguration"/>
+		    <Image src="./img/analitica.png" width="140px" height="35px" />
+		    </contentLeft>
+		    <contentRight>
+		        <Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		    </contentRight>		
+		</Bar>
+		    </customHeader>
+		    <content>
+		<Bar>
+		    <contentLeft>
+		        <Text text = "Proceso de consolidación estados financieros"></Text>
+		    </contentLeft>
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar id="idIconTabBar" class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter id="idIconTabPrepare" icon="sap-icon://create-form" text="Proceso de Carga de Datos" key="CargaDatos" design="Horizontal">
+						<Table id="idPrepareTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="1.Preparación de datos maestros"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="1.1 Cargue de información (Entidad Externa)"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="1.2 Comentarios, Detalle de Inversiones, Cambios en el Patrimonio"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="1.3 Estados Financieros Entidad Externa"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="2. Ecuación contable y método"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="3. Porcentajes de Propiedad (Entidad y Grupo)"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="4. Variación Patrimonial"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="5. Validación cuentas origen"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="6. Tasas de Conversión"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="7. Estados Financieros Individuales"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabSeparator id="idSeparatorCreate"/>
+					<IconTabFilter id="idIconTabConciliate" icon="sap-icon://decision" text="Proceso de Conciliación" key="Conciliacion" design="Horizontal">
+						<Table id="idConciliateTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="1. Comprobantes de eliminación/reclasificación"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="2. Conciliación Balance y PyG"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="3. Conciliación Inversiones"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="4. Reclasificaciones y Otros"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="5. Composición Accionaria"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabSeparator/>
+					<IconTabFilter id="idIconTabConsolidate" icon="sap-icon://citizen-connect" text=" Proceso Consolidación" key="Consolidacion" design="Horizontal">
+						<Table id="idConsolidateTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="1. Eliminaciones cuenta - fuente"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="2. Eliminaciones cuenta - Intercompañía"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="3. Inversión Vs. Patrimonio"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="4. Interés Minoritario"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="5. Datos Intercompany"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="6. Fuentes por Intercompañía"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="7. Estados Financieros Consolidados"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabSeparator/>
+                    <IconTabFilter id="idIconTabValidate" icon="sap-icon://validate" text="Análisis de la Consolidación" key="ValidarCarga" design="Horizontal">
+						<Table id="idValidateTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="1. Estados Financieros - Consulta"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="2. Notas Superintendencia"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,83 @@
+<!-- CAMBIOS PARA PRD -->
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.GenerarConcepto" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Generar Detalle por Concepto">
+		<customHeader>
+		    <Bar class="barLogo">
+		        <contentLeft>
+		            <Button   type="Back" press="handlePressConfiguration"/>
+		            <Image src="./img/analitica.png" width="140px" height="35px" />
+		        </contentLeft>
+		        <contentRight>
+		            <Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		        </contentRight>		
+		    </Bar>
+		</customHeader>
+		<content>
+		    <Bar>
+		    <contentLeft>
+		        <Text text = "Generar detalle por Concepto"></Text>
+		    </contentLeft>
+		</Bar>
+			<IconTabBar id="idIconTabBar" class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter id="idIconTabPrepare" icon="sap-icon://create-form" text="Actualización de datos transaccionales" key="CargaDatos" design="Horizontal">
+						<Table id="idPrepareTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="Procesos de carga" press="onDowload('P01_PROCESOS_CARGA.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+	
+								<ColumnListItem>
+									<cells>
+										<Link text="Reporte de validación de estructuras financieras" press="onDowload('RP03_VALIDACION_ESTRUCTURA_CARACOL.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Ingresar ajustes manuales" press="onDowload('IF17_CARACOL_AJUSTES_JT.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabSeparator id="idSeparatorCreate"/>
+					<IconTabFilter id="idIconTabConciliate" icon="sap-icon://decision" text="Detalle de subconcepto por concepto" key="Conciliacion" design="Horizontal">
+						<Table id="idConciliateTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="Detallar concepto BG Caracol" press="onDowload('IF14_CARACOL_DETALLE_BG.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="Detallar conceptos por saldo" press="onDowload('IF03_DETALLETERCEROXCONCEPTO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

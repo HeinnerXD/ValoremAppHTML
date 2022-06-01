@@ -1,0 +1,52 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.InformesValorem" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Otros Informes Valorem">
+		<customHeader>
+		<Bar class="barLogo">
+		<contentLeft>
+		<Button   type="Back" press="handlePressConfiguration"/>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+		<content>
+							<Bar>
+		<contentLeft>
+		<Text text = "Otros Informes Valorem"></Text>
+		</contentLeft>
+		
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar id="idIconTabBar" class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter id="idIconTabPrepare" icon="sap-icon://create-form" text="Datos Maestros" key="Preparacion" design="Horizontal">
+						<Table id="idPrepareTable">
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="Reporte Proveedores" press="onDowload('GTI-SHC-Reporte Proveedores.xlsx')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="Reporte Clientes" press="onDowload('GTI-SHC-Reporte clientes.xlsx')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

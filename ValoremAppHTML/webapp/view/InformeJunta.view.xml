@@ -1,0 +1,59 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.InformeJunta" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Informe de Junta">
+		<customHeader>
+		    <Bar class="barLogo">
+		        <contentLeft>
+		            <Button   type="Back" press="handlePressConfiguration"/>
+		            <Image src="./img/analitica.png" width="140px" height="35px" />
+		        </contentLeft>
+		        <contentRight>
+		            <Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		        </contentRight>		
+		    </Bar>
+		</customHeader>
+		<content>
+		    <Bar>
+		        <contentLeft>
+		            <Text text = "Informe de Junta"></Text>
+		        </contentLeft>
+		    </Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<GenericTile id="TileCargueInicial" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Cargue Inicial" press="press_cargueInicial">
+		        <TileContent >
+			        <ImageContent src="sap-icon://accounting-document-verification"/>
+		        </TileContent>
+	        </GenericTile>
+	        <GenericTile id="TileGenerarInformeJunta" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Generación de Informe de Junta" press="press_generarInformeJunta">
+		        <TileContent >
+			        <ImageContent src="sap-icon://manager-insight"/>
+		        </TileContent>
+	        </GenericTile>
+            <GenericTile id="TileComentariosAreas" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Comentarios por Área" press="press_comentariosAreas">
+		        <TileContent >
+			        <ImageContent src="sap-icon://discussion-2"/>
+		        </TileContent>
+	        </GenericTile>
+            <GenericTile id="TileComentariosGenerales" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Comentarios Generales" press="press_comentariosGenerales">
+		        <TileContent >
+			        <ImageContent src="sap-icon://notification-2"/>
+		        </TileContent>
+	        </GenericTile>
+            <GenericTile id="TileRedondeoCifras" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Redondeo de Cifras" press="press_redondeoCifras">
+		        <TileContent >
+			        <ImageContent src="sap-icon://simulate"/>
+		        </TileContent>
+	        </GenericTile>
+            <GenericTile id="TileInformeJunta" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Informe de Junta" press="press_informeJunta">
+		        <TileContent >
+			        <ImageContent src="sap-icon://notes"/>
+		        </TileContent>
+	        </GenericTile>
+            <GenericTile id="TileParametrizacion" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Parametrización" press="press_parametrizacion">
+		        <TileContent >
+			        <ImageContent src="sap-icon://indent"/>
+		        </TileContent>
+	        </GenericTile>
+		</content>
+	</Page>
+</mvc:View>

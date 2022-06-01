@@ -1,0 +1,136 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="valoremapp.ValoremAppHTML.controller.NotasFinancieros2" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+		<Page title="Notas Consolidadas">
+		<customHeader>
+			<Bar class="barLogo">
+				<contentLeft>
+					<Button type="Back" press="handlePressConfiguration"/>
+					<Image src="./img/analitica.png" width="140px" height="35px"/>
+				</contentLeft>
+				<contentRight>
+					<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<Bar>
+				<contentLeft>
+					<Text text="Notas Consolidadas"></Text>
+				</contentLeft>
+			</Bar>
+			<IconTabBar id="idIconTabBar" class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter id="idIconTabNotasConsolidadas" icon="sap-icon://validate" text="Notas Consolidadas" key="NotasConsolidadas"
+						design="Horizontal">
+						<Table id="idNotasConsolidadasTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP01_INFORME_ANUAL I_CONSOLIDADOS" press="onDowload('RP01_INFORME_ANUAL I_CONSOLIDADOS.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP02_INFORME_ANUAL 900005_CONSOLIDADO" press="onDowload('RP02_INFORME_ANUAL 900005_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP03_INFORME_ANUAL 900008_CONSOLIDADO" press="onDowload('RP03_INFORME_ANUAL 900008_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP04_INFORME_ANUAL 900009_CONSOLIDADO 2" press="onDowload('RP04_INFORME_ANUAL 900009_CONSOLIDADO 2.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP05_INFORME_ANUAL 900018_CONSOLIDADO" press="onDowload('RP05_INFORME_ANUAL 900018_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP06_INFORME_ANUAL_II_CONSOLIDADOS" press="onDowload('RP06_INFORME_ANUAL_II_CONSOLIDADOS.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP07_INFORME_ANUAL_IMPUES_CONSOLIDADO" press="onDowload('RP07_INFORME_ANUAL_IMPUES_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="RP08_OPTATIVAS_PPE_CONSOLIDADO" press="onDowload('RP08_OPTATIVAS_PPE_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP09_OPTATIVAS_PROV_CONTING_CONSOLIDADO" press="onDowload('RP09_OPTATIVAS_PROV_CONTING_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP10_OPTATIVAS_INTANG_CONSOLIDADO" press="onDowload('RP10_OPTATIVAS_INTANG_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP11_OPTATIVAS_BIOLOG_CONSOLIDADO" press="onDowload('RP11_OPTATIVAS_BIOLOG_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP12_OPTATIVAS_ADICIONAL_CONSOLIDADO" press="onDowload('RP12_OPTATIVAS_ADICIONAL_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP13_EFE_INDIRECTO_CONSOLIDADO" press="onDowload('RP13_EFE_INDIRECTO_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP14_EFE_INDIRECTO_NIIF_CONSOLIDADO" press="onDowload('RP14_EFE_INDIRECTO_NIIF_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabFilter id="idIconTabPreparacion" icon="sap-icon://validate" text="Preparación" key="NotasConsolidadas"
+						design="Horizontal">
+						<Table id="idPreparacion">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="Abrir Periodos" press="onDowloadPeriodos('1. PREPARACIÓN.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+		</pages>
+	</App>
+</mvc:View>

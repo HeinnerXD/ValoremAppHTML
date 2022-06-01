@@ -1,0 +1,117 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.NotasFinancieros" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Notas Individuales">
+		<customHeader>
+			<Bar class="barLogo">
+				<contentLeft>
+					<Button type="Back" press="handlePressConfiguration"/>
+					<Image src="./img/analitica.png" width="140px" height="35px"/>
+				</contentLeft>
+				<contentRight>
+					<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<Bar>
+				<contentLeft>
+					<Text text="Notas a Estados Financieros"></Text>
+				</contentLeft>
+			</Bar>
+            <VBox class="vboxClass" >
+                <Label wrapping="true" id="periodoLabel" class="vboxLabel" />
+                <Label wrapping="true" id="hastaLabel" class="vboxLabel" />
+            </VBox>
+			<IconTabBar id="idIconTabBarIndividuales" class="sapUiResponsiveContentPadding TabBarMeses" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+                <items>
+					<IconTabFilter id="idIconTabEneros" icon="sap-icon://appointment-2" text="Notas Trimestrales" key="Enero"
+						design="Horizontal">
+                        <Table id="idEneroTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="Estados Financieros" press="onDowload('Estados Financieros.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Derechos de Uso" press="onDowload('Derechos de Uso.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Flujo de Efectivo Indirecto" press="onDowload('Flujo de Efectivo Indirecto.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabSeparator id="idSeparatorFebrero"/>
+                    <IconTabFilter id="idIconTabFebrero" icon="sap-icon://appointment-2" text="Notas Cierre Anual" key="Febrero"
+						design="Horizontal">
+                        <Table id="idFebreroTable">
+							<columns>
+								<Column width="12em">
+									<Text text="Nombre"/>
+								</Column>
+                                <Column width="12em">
+									<Text text="Descripción"/>
+								</Column>
+							</columns>
+							<items>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Derechos de Uso" press="onDowload('Derechos de Uso.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Estados Financieros" press="onDowload('Estados Financieros.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Flujo de Efectivo Indirecto" press="onDowload('Flujo de Efectivo Indirecto.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Notas XBRL_SS" press="onDowload('Notas XBRL_SS.xlsm')"/>
+									</cells>
+								</ColumnListItem> 
+								<ColumnListItem>
+									<cells>
+										<Link text="Reportes para Informe Anual I" press="onDowload('Reportes para Informe Anual I.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Reportes para Informe Anual II" press="onDowload('Reportes para Informe Anual II.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Reportes para Informe Anual Impuestos" press="onDowload('Reportes para Informe Anual Impuestos.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

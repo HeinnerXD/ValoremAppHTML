@@ -1,0 +1,99 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Administracion" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Administración">
+		<customHeader>
+		    <Bar class="barLogo">
+		        <contentLeft>
+		            <Button   type="Back" press="handlePressConfiguration"/>
+		            <Image src="./img/analitica.png" width="140px" height="35px" />
+		        </contentLeft>
+		
+		        <contentRight>
+		            <Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		        </contentRight>		
+		    </Bar>
+		</customHeader>
+		<content>
+			<Bar>
+		        <contentLeft>
+		            <Text text = "1.Administración"></Text>
+		        </contentLeft>
+		    </Bar>
+			<IconTabBar class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter icon="sap-icon://create-form" text="Administración" key="Preparacion" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="Administración de Cuentas" press="onDowload('Consolidación - Administración de Cuentas.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem>
+									<cells>
+										<Link text="Administración de Entidades" press="onDowload('Consolidación - Administración de Entidades.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Administración de Fuentes" press="onDowload('Consolidación - Administración de Fuentes.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Definición de Equipos" press="onDowload('Consolidación - Definición de Equipos.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <!-- <ColumnListItem>
+									<cells>
+										<Link text="5. Cuentas Grupo" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="6. Jerarquía Situación Financiera" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="7. Jerarquia Estado de Resultados" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="8. Cambio Patrimonio" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="9. Notas" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="10. Informes" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="11. Periodos y Plazos" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="12. Terceros e Intercompañias" press="onDowload('')"/>
+									</cells>
+								</ColumnListItem> -->
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

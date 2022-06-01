@@ -1,0 +1,88 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Reportes" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="5. Reportes">
+		<customHeader>
+		<Bar class="barLogo">
+		<contentLeft>
+		<Button   type="Back" press="handlePressConfiguration"/>
+		<Image src="./img/analitica.png" width="140px" height="35px" />
+		</contentLeft>
+		
+		<contentRight>
+		<Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		</contentRight>		
+		</Bar>
+		</customHeader>
+
+		<content>
+							<Bar>
+		<contentLeft>
+		<Text text = "5. Reportes"></Text>
+		</contentLeft>
+		
+		</Bar>
+			<!--<Button xmlns="sap.m" text="Button" id="button1" press="onClearCrear"/>  -->
+			<IconTabBar  class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+                    <IconTabFilter  icon="sap-icon://create-form" text="Reportes" key="Preparacion" design="Horizontal">
+						<Table >
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="41. Rpte Eliminacion Total x Fuente x Cia" press="onDowload('41 Rpte Eliminacion Total x Fuente x Cia.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="42. Rpte Eliminación Total x Cuenta entre Cias" press="onDowload('42 Rpte Eliminación Total x Cuenta entre Cias.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="47. Estados Financieros" press="onDowload('47 Estados Financieros.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                  <ColumnListItem>
+									<cells>
+										<Link text="46 Rpte Detalle Mvto x Cada Fuentes Entre Cias." press="onDowload('46 Rpte Detalle Mvto x Cada Fuentes Entre Cias.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                  <ColumnListItem>
+									<cells>
+										<Link text="412. Rpte Eliminaciones Patrimoniales x Cia" press="onDowload('412 Rpte Eliminaciones Patrimoniales x Cia.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="413. Rpte Bce Eliminac x Fuente x Cuenta en Cada Cia" press="onDowload('413 Rpte Bce Eliminac x Fuente x Cuenta en Cada Cia.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Análisis de la Consolidación" press="onDowload('Análisis de la Consolidación.xltm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Informe Anual Notas" press="onDowload('Informe Anual Notas.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Nota Segmentos" press="onDowload('Nota Segmentos.xltm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                   
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

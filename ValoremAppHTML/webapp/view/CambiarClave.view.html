@@ -1,0 +1,71 @@
+<template data-controller-name="valoremapp.ValoremAppHTML.controller.CambiarClave">
+    <div id="app2" data-sap-ui-type="sap.m.App">
+        <div id="page2" data-sap-ui-type="sap.m.Page" data-title="">
+            <div data-sap-ui-aggregation="content">
+                <div class="container container-row">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center" >
+                            <img src="./img/analitica_grande.png" alt="computer icon"
+                                style=" width:500px;height:400px; margin-bottom:80px">
+                        </div>
+                        <div class="col" style="">
+                            <h2 style="font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;">PORTAL DE
+                                SERVICIOS</h2>
+                            <div style="margin-top:20px;">
+                                <form>
+                                    <input type="text" id="txtusuarioclave" class="email" placeholder="Usuario">
+                                    <br />
+                                    <input type="password" id="txtpassclave" class="pwd"
+                                        placeholder="Contraseña Actual">
+                                    <br />
+                                    <input data-toggle="tooltip"
+                                        title="Políticas de Clave: Utilizar únicamente letras y números (una mayúscula y una minúscula) y que no coincida con las últimas 5 claves!"
+                                        type="password" id="txtpassclavenueva1" class="pwd"
+                                        placeholder="Contraseña nueva">
+                                    <br />
+                                    <input data-toggle="tooltip"
+                                        title="Políticas de Clave: Utilizar únicamente letras y números (una mayúscula y una minúscula) y que no coincida con las últimas 5 claves!"
+                                        type="password" id="txtpassclavenueva2" class="pwd"
+                                        placeholder="Repetir contraseña nueva">
+                                    <br />
+                                </form>
+                            </div>
+                            <div class="divPoliticas">
+                                <label class="labelPoliticas">Políticas de Clave: Utilizar únicamente letras y
+                                    números (una mayúscula y una minúscula) y que no coincida con las últimas 5
+                                    claves!</label>
+                            </div>
+<div class="container d-flex justify-content-end">
+
+                                    <div class="hero-button text-center">
+                                    <a class="btn btn-primary btn-sm" style="margin: 6px;" id="btnvolver">
+                                        <i class="icon-apple icon-3x pull-left"></i>
+                                        <span style="font-size:small;">Volver</span>
+                                    </a>
+                                </div>
+                                                                    <div class="hero-button text-center">
+                                    <a class="btn btn-primary btn-sm" id="btncambiarpass" style="margin: 6px;">
+                                        <i class="icon-apple icon-3x pull-left"></i>
+                                        <span style="font-size:small;">Cambiar Contraseña</span>
+                                    </a>
+                                </div>
+</div>
+                            <!-- <div style="margin-left: 60%;">
+                                <div class="wide-button">
+                                    <button class="register" id="btnvolver" style="border-right: solid;   margin-left: auto;
+    margin-right: auto;">
+                                        <span>Volver</span>
+                                    </button>
+                                    <button class="register" id="btncambiarpass" style="border-right: solid;   margin-left: auto;
+    margin-right: auto;">
+                                        <span>Cambiar Contraseña</span>
+                                    </button>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
