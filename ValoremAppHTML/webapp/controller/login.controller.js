@@ -16,19 +16,14 @@ sap.ui.define([
             window.addEventListener('popstate', function (event) {
                 history.pushState(null, document.title, location.href);
             });
-            // var that=this;
-            // var oHistory = History.getInstance();
-            // var sPreviousHash = oHistory.getPreviousHash();
-            // if (sPreviousHash !== undefined) {
-
-            // }
         },
         _onObjectMatched: function (oEvent) {
             document.getElementById("txtusuario").value = "";
             document.getElementById("txtpass").value = "";
         },
         inicializar: function () {
-            var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
+            // var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
+            var urlServer = "http://localhost:3000"
             var page = this.byId("page");
             page.setShowHeader(false);
             var that = this;
@@ -71,21 +66,39 @@ sap.ui.define([
                         if (data.data.length === 0) {
                             // console.log("ENVIANDO FALSE");
                             localStorage.setItem('periodos', "false")
+                            localStorage.setItem('periodosStatus', "false")
                             that.oRouter.navTo("mainMenu", { roles: JSON.stringify(roles) }, true);
                         } else {
                             // console.log("ENVIANDO ARRAY");
                             localStorage.setItem('periodos', JSON.stringify(data.data[0]))
-                            that.oRouter.navTo("mainMenu", { roles: JSON.stringify(roles) }, true);
+                            localStorage.setItem('periodosStatus', JSON.stringify(data.periodos[0]))
+                            console.log(data.status)
+                            const userStatusData = data.status[0]
+                            MessageBox.information(`Estado del usuario ${userStatusData.USUARIO}: ${userStatusData.NM_ESTADO} `, {
+                                details: `Fecha de vencimiento: ${userStatusData.FECHA_VENCIMIENTO}`,
+                                actions: [MessageBox.Action.OK],
+                                emphasizedAction: MessageBox.Action.OK,
+                                onClose: function (sAction) {
+                                    that.oRouter.navTo("mainMenu", { roles: JSON.stringify(roles) }, true);
+                                }
+                            });
                         }
-
                     }).fail(function (xhr, ajaxOptions, thrownError) {
                         sap.ui.core.BusyIndicator.hide();
-                        MessageBox.error("Error: " + xhr.responseText, {
-                            actions: [MessageBox.Action.OK],
-                            emphasizedAction: MessageBox.Action.OK,
-                            onClose: function (sAction) { }
-                        });
-
+                        var { error } = JSON.parse(xhr.responseText)
+                        if (error.message === 'authentication failed') {
+                            MessageBox.error("Error de autenticación, por favor verifique los datos.", {
+                                actions: [MessageBox.Action.OK],
+                                emphasizedAction: MessageBox.Action.OK,
+                                onClose: function (sAction) { }
+                            });
+                        } else {
+                            MessageBox.error("Error: " + xhr.responseText, {
+                                actions: [MessageBox.Action.OK],
+                                emphasizedAction: MessageBox.Action.OK,
+                                onClose: function (sAction) { }
+                            });
+                        }
                     })
                 }
 

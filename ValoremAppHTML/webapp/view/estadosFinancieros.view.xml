@@ -23,6 +23,10 @@
 					<Text text="Estados Financieros"></Text>
 				</contentLeft>
 			</Bar>
+            <VBox class="vboxClass" >
+                <Label wrapping="true" id="periodoStatusLabel" class="vboxLabel" />
+                <Label wrapping="true" id="hastaStatusLabel" class="vboxLabel" />
+            </VBox>
 			<IconTabBar id="idIconTabBarIndividuales" class="sapUiResponsiveContentPadding TabBarMeses" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
 				<items>
 					<IconTabFilter id="idIconTabEneros" icon="sap-icon://appointment-2" text="Cargue Estados Financieros" key="Enero"

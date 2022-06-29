@@ -34,6 +34,11 @@
 			<ImageContent src="sap-icon://notes"/>
 		</TileContent>
 	</GenericTile>
+    <GenericTile id="TileFReportesFinanciero" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Reportes" press="press_FReportes">
+		<TileContent >
+			<ImageContent src="sap-icon://legend"/>
+		</TileContent>
+	</GenericTile>
 	</content>
 	</Page>
 	</App>

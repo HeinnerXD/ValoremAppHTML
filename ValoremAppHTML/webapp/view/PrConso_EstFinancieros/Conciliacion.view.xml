@@ -86,11 +86,11 @@
 										<Link text="34. Composición Accionaria" press="onDowload('34 Composición Accionaria.xltm')"/>
 									</cells>
 								</ColumnListItem>
-                                  <ColumnListItem>
+                                  <!-- <ColumnListItem>
 									<cells>
 										<Link text="RP02 Conciliación GyP" press="onDowload('RP02_CONCILIACION_GYP_JUN2020-1RA VERSION_COPIA_CTA.xlsx')"/>
 									</cells>
-								</ColumnListItem>
+								</ColumnListItem> -->
 							</items>
 						</Table>
 					</IconTabFilter>

@@ -8,6 +8,16 @@ sap.ui.define([
     return Controller.extend("valoremapp.ValoremAppHTML.controller.estadosFinancieros", {
 
         onInit: function () {
+            if (localStorage.getItem('periodosStatus') === "false") {
+                // console.log("ENTRÓ CON FALSE");
+                this.byId('periodoStatusLabel').setText('Sin periodo a reportar');
+                this.byId('hastaStatusLabel').setText('Sin fecha limite Reporte');
+            } else {
+                // console.log("ENTRÓ CON ARRAY");
+                var data = JSON.parse(localStorage.getItem('periodosStatus'));
+                this.byId('periodoStatusLabel').setText('Periodo a reportar: ' + data.PERIODO + '');
+                this.byId('hastaStatusLabel').setText('Fecha Limite Reporte: ' + data.HASTA);
+            }
             this.oRouter = sap.ui.core.UIComponent.getRouterFor(this.getView());
             this.oRouter.getRoute("estadosFinancieros").attachMatched(this._onRouteMatched, this);
         },

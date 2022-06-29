@@ -1,28 +1,35 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History",
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/routing/History",
     "sap/m/MessageBox"
 ], function (Controller, History) {
-	"use strict";
-	return Controller.extend("valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Reportes", {
-		onInit: function () {
-			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this.getView());
+    "use strict";
+    return Controller.extend("valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Reportes", {
+        onInit: function () {
+            this.oRouter = sap.ui.core.UIComponent.getRouterFor(this.getView());
             this.oRouter.getRoute("FReportes").attachMatched(this._onRouteMatched, this);
-		},
+        },
         _onRouteMatched: function (oEvent) {
             this.arr = JSON.parse(oEvent.getParameter("arguments").roles);
         },
-		handlePressConfiguration: function () {
+        handlePressConfiguration: function () {
             var that = this;
-			var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
-			that.oRouter.navTo("mainMenuEstFinanciero",{roles: JSON.stringify(this.arr)}, true);
-		},
-		handleUserItemPressed : function () {
-			var that = this;
-			var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
-			that.oRouter.navTo("login", true);
+            var oHistory = History.getInstance();
+            var sPreviousHash = oHistory.getPreviousHash();
+            debugger
+            if (localStorage.getItem('FromFinancieros') === 'true') {
+                that.oRouter.navTo("reportesFinancieros", { roles: JSON.stringify(this.arr) }, true);
+            } else {
+                that.oRouter.navTo("mainMenuEstFinanciero", { roles: JSON.stringify(this.arr) }, true);
+            }
+            localStorage.setItem('FromFinancieros', 'false')
+        },
+        handleUserItemPressed: function () {
+            var that = this;
+            var oHistory = History.getInstance();
+            var sPreviousHash = oHistory.getPreviousHash();
+            that.oRouter.navTo("login", true);
+            localStorage.setItem('FromFinancieros', 'false')
         },
         onDowload: function (filename) {
             var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
@@ -94,5 +101,5 @@ sap.ui.define([
 
             });
         }
-	});
+    });
 });

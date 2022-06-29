@@ -4,13 +4,29 @@
             <div data-sap-ui-aggregation="content">
                 <div class="container container-row">
                     <div class="row">
-                        <div class="col d-flex justify-content-center" >
+                        <div class="col d-flex justify-content-center">
                             <img src="./img/analitica_grande.png" alt="computer icon"
                                 style=" width:500px;height:400px; margin-bottom:80px">
                         </div>
                         <div class="col" style="">
                             <h2 style="font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;">PORTAL DE
                                 SERVICIOS</h2>
+                            <div class="container d-flex justify-content-center">
+                                <div class="form-check form-check-reverse">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="oRTenantValorem" checked>
+                                    <label class="form-check-label" for="oRTenantValorem">
+                                        TENANT VALOREM
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-reverse" style="margin-left:20px;">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="oRTenantKoba">
+                                    <label class="form-check-label" for="oRTenantKoba">
+                                        TENANT KOBA
+                                    </label>
+                                </div>
+                            </div>
                             <div style="margin-top:20px;">
                                 <form>
                                     <input type="text" id="txtusuarioclave" class="email" placeholder="Usuario">
@@ -28,6 +44,7 @@
                                         type="password" id="txtpassclavenueva2" class="pwd"
                                         placeholder="Repetir contraseña nueva">
                                     <br />
+
                                 </form>
                             </div>
                             <div class="divPoliticas">
@@ -35,21 +52,40 @@
                                     números (una mayúscula y una minúscula) y que no coincida con las últimas 5
                                     claves!</label>
                             </div>
-<div class="container d-flex justify-content-end">
 
-                                    <div class="hero-button text-center">
+                            <!-- <div class="container d-flex justify-content-end">
+                                <div class="form-check form-check-reverse">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        TENANT VALOREM
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-end">
+                                <div class="form-check form-check-reverse">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        TENANT KOBA
+                                    </label>
+                                </div>
+                            </div> -->
+
+                            <div class="container d-flex justify-content-end">
+                                <div class="hero-button text-center">
                                     <a class="btn btn-primary btn-sm" style="margin: 6px;" id="btnvolver">
                                         <i class="icon-apple icon-3x pull-left"></i>
                                         <span style="font-size:small;">Volver</span>
                                     </a>
                                 </div>
-                                                                    <div class="hero-button text-center">
+                                <div class="hero-button text-center">
                                     <a class="btn btn-primary btn-sm" id="btncambiarpass" style="margin: 6px;">
                                         <i class="icon-apple icon-3x pull-left"></i>
                                         <span style="font-size:small;">Cambiar Contraseña</span>
                                     </a>
                                 </div>
-</div>
+                            </div>
                             <!-- <div style="margin-left: 60%;">
                                 <div class="wide-button">
                                     <button class="register" id="btnvolver" style="border-right: solid;   margin-left: auto;

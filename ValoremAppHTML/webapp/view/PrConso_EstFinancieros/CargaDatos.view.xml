@@ -70,10 +70,16 @@
 									<cells>
 										<Link text="11. Ecuación Contable y Método" press="onDowload('11 Ecuación Contable y método.xltm')"/>
 									</cells>
+                                    
 									<cells>
 										<Link text="21. Plantilla Cargue información Financiera" press="onDowload('21 Plantilla cargue Info Fciera.xltm')"/>
 									</cells>
 								</ColumnListItem>
+                                <ColumnListItem>
+                                    <cells>
+										<Link text="20. Auditoria de Procesos" press="onDowload('20 Auditoria de Procesos.xlsm')"/>
+									</cells>
+                                </ColumnListItem>
 							</items>
 						</Table>
 					</IconTabFilter>
@@ -103,10 +109,19 @@
 								</ColumnListItem>
                                 <ColumnListItem>
 									<cells>
-										<Link text="15 Validar Conversión de Moneda" press="onDowload('15 Validar conversión de moneda.xltm')"/>
+										<Link text="15. Validar Conversión de Moneda" press="onDowload('15 Validar conversión de moneda.xltm')"/>
 									</cells>
 								</ColumnListItem>
-                                                                
+                                <ColumnListItem>
+									<cells>
+										<Link text="19. Control de Saldos por Entidad" press="onDowload('19 Control de Saldos por Entidad.xlsm')"/>
+									</cells>
+								</ColumnListItem> 
+                                <ColumnListItem>
+									<cells>
+										<Link text="121. Saldo de todas las intercompañías" press="onDowload('121 Saldo de todas las intercompañías.xlsm')"/>
+									</cells>
+								</ColumnListItem>                      
                                 <ColumnListItem>
 									<cells>
 										<Link text="Estado Situación Financiera" press="onDowload('RP01_ESTADO_SITUACION_FINANCIERA_IND_X_COMP.xltm')"/>

@@ -13,8 +13,8 @@ sap.ui.define([
 		 * @memberOf valoremapp.ValoremAppHTML.view.CambiarClave
 		 */
         onInit: function () {
-            var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
-
+            // var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
+            var urlServer = "http://localhost:3000"
             var page = this.byId("page2");
             page.setShowHeader(false);
             this.oRouter = sap.ui.core.UIComponent.getRouterFor(this.getView());
@@ -35,7 +35,8 @@ sap.ui.define([
                 var pass = document.getElementById("txtpassclave").value;
                 var passnueva1 = document.getElementById("txtpassclavenueva1").value;
                 var passnueva2 = document.getElementById("txtpassclavenueva2").value;
-
+                var checkKoba = document.getElementById("oRTenantKoba").checked;
+                debugger
                 if (usuario == "" || pass == "" || passnueva1 == "" || passnueva2 == "") {
                     MessageBox.warning("Debes completar todos los campos", {
                         actions: [MessageBox.Action.OK],
@@ -60,8 +61,8 @@ sap.ui.define([
                     $.post(urlServer + "/api/password", {
                         user: usuario,
                         password: pass,
-                        newPassword: passnueva1
-
+                        newPassword: passnueva1,
+                        checkKoba: checkKoba
                         // function (data, status) {
                         // 	alert("Data: " + data + "\nStatus: " + status);
                     }).done(function () {

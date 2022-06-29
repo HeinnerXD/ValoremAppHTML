@@ -16,7 +16,7 @@ sap.ui.define([
             this.oRouter.getRoute("reportesFinancieros").attachMatched(this._onRouteMatched, this);
             this.TileEstadoFinanciero = this.byId("TileEstadoFinanciero");
             this.TileNotasEstadoFinanciero = this.byId("TileNotasEstadoFinanciero");
-
+            this.TileFReportesFinanciero = this.byId("TileFReportesFinanciero");
         },
         resetTiles: function () {
             this.TileEstadoFinanciero.setVisible(false);
@@ -35,6 +35,10 @@ sap.ui.define([
                     if (element === "Z_PORTAL_COMP_NOTAS") { //Z_PORTAL_COMP_NOTAS
                         this.TileNotasEstadoFinanciero.setVisible(true);
                     }
+
+                    if (element === "Z_PORTAL_CF_REPORTES") { //Z_PORTAL_CF_REPORTES
+                        this.TileFReportesFinanciero.setVisible(true);
+                    }
                 });
                 if (this.TileEstadoFinanciero.getVisible() === false &&
                     this.TileNotasEstadoFinanciero.getVisible() === false) {
@@ -49,6 +53,10 @@ sap.ui.define([
         },
         press_notasFinancieros: function () {
             this.oRouter.navTo("NotasFinancieros", { roles: JSON.stringify(this.arr) }, true);
+        },
+        press_FReportes: function () {
+            localStorage.setItem('FromFinancieros', 'true')
+            this.oRouter.navTo("FReportes", {roles: JSON.stringify(this.arr)}, true);
         },
         handlePressConfiguration: function () {
             var that = this;

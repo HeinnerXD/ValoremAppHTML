@@ -49,6 +49,11 @@
 										<Link text="Definición de Equipos" press="onDowload('Consolidación - Definición de Equipos.xlsm')"/>
 									</cells>
 								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Homologación de Cuentas" press="onDowload('Consolidación - Homologacion de Cuentas.xlsm')"/>
+									</cells>
+								</ColumnListItem>
                                 <!-- <ColumnListItem>
 									<cells>
 										<Link text="5. Cuentas Grupo" press="onDowload('')"/>

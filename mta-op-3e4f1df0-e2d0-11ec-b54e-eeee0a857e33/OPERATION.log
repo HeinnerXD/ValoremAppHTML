@@ -1,0 +1,2121 @@
+#2.0#2022 06 03 00:00:56.819#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-10###
+[XS2StartProcessListener] Operation ID: 3e4f1df0-e2d0-11ec-b54e-eeee0a857e33#
+
+#2.0#2022 06 03 00:00:56.836#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-10###
+[XS2StartProcessListener] Process environment: {
+  "PLATFORM" : "{\n  \"name\": \"CLOUD-FOUNDRY\",\n  \"module-types\": [\n    { \"name\": \"custom\" },\n    { \"name\": \"javascript.nodejs\" },\n    { \"name\": \"java\", \"parameters\": { \"buildpack\": \"sap_java_buildpack\" }},\n    { \"name\": \"java.tomcat\", \"parameters\": { \"buildpack\": \"sap_java_buildpack\" }, \"properties\": { \"TARGET_RUNTIME\": \"tomcat\" }},\n    { \"name\": \"java.tomee\",  \"parameters\": { \"buildpack\": \"sap_java_buildpack\" }, \"properties\": { \"TARGET_RUNTIME\": \"tomee\" }},\n    { \"name\": \"com.sap.xs.hdi-dynamic\", \"parameters\": { \"buildpack\": \"nodejs_buildpack\" }},\n    { \"name\": \"com.sap.xs.hdi\", \"parameters\": { \"no-route\": true, \"no-start\": true, \"memory\": \"256M\", \"tasks\": [{ \"name\": \"deploy\", \"memory\": \"256M\", \"command\": \"npm start\" }], \"dependency-type\": \"hard\" }, \"properties\" : { \"EXIT\": 1 }},\n    { \"name\": \"com.sap.xs.hdi-zdm\", \"parameters\": { \"zdm-mode\": true, \"no-route\": true, \"no-start\": true, \"memory\": \"256M\", \"tasks\": [{ \"name\": \"deploy\", \"memory\": \"256M\", \"command\": \"npm start\" }], \"dependency-type\": \"hard\" }, \"properties\" : { \"EXIT\": 1, \"HDI_DEPLOY_MODE\": \"ZDM\" }},\n    { \"name\": \"com.sap.portal.site-content\", \"parameters\": { \"no-route\": true, \"memory\": \"256M\", \"execute-app\": true, \"success-marker\": \"STDOUT:Deployment of site content to .* done.*\", \"failure-marker\": \"STDERR:Deployment of site content to .* failed.*\", \"stop-app\": true, \"check-deploy-id\": true, \"dependency-type\": \"hard\", \"health-check-type\": \"none\" }},\n    { \"name\": \"com.sap.portal.content\", \"parameters\": { \"no-route\": true, \"no-start\": true, \"memory\": \"256M\", \"tasks\": [{ \"name\": \"deploy\", \"memory\": \"256M\", \"command\": \"npm start\" }], \"dependency-type\": \"hard\" }, \"properties\" : { \"EXIT\": 1 }},\n    { \"name\": \"com.sap.xs.dwf\", \"parameters\": { \"no-route\": true, \"memory\": \"256M\", \"execute-app\": true, \"success-marker\": \"STDOUT:The deployment of DWF content to .* container finished successfully .*\", \"failure-marker\": \"STDERR:The deployment of DWF content to .* container failed .*\", \"stop-app\": true, \"check-deploy-id\": true, \"dependency-type\": \"hard\", \"health-check-type\": \"none\" }},\n    { \"name\": \"business-logging\", \"parameters\": { \"no-route\": true, \"memory\": \"256M\", \"execute-app\": true, \"success-marker\": \"STDOUT:Deployment of content deployer done.\", \"failure-marker\": \"STDERR:Deployment of content deployer failed.\", \"stop-app\": true, \"health-check-type\": \"none\" }},\n    { \"name\": \"com.sap.business-logging.content\", \"parameters\": { \"no-route\": true, \"no-start\": true, \"memory\": \"256M\", \"tasks\": [{ \"name\": \"deploy\", \"memory\": \"256M\", \"command\": \"npm start\" }], \"dependency-type\": \"hard\" }, \"properties\" : { \"EXIT\": 1 }},\n    { \"name\": \"com.sap.html5.application-content\", \"parameters\": { \"no-route\": true, \"memory\": \"256M\", \"execute-app\": true, \"success-marker\": \"STDOUT:Deployment of html5 application content done.*\", \"failure-marker\": \"STDERR:Deployment of html5 application content failed.*\", \"stop-app\": true, \"check-deploy-id\": true, \"dependency-type\": \"hard\", \"health-check-type\": \"none\" }}, \n    { \"name\": \"com.sap.html5.application.content\", \"parameters\": { \"no-route\": true, \"no-start\": true, \"memory\": \"256M\", \"tasks\": [{ \"name\": \"deploy\", \"memory\": \"256M\", \"command\": \"npm start\" }], \"dependency-type\": \"hard\" }, \"properties\" : { \"EXIT\": 1 }},\n    { \"name\": \"staticfile\", \"parameters\": { \"buildpack\": \"staticfile_buildpack\" }},\n    { \"name\": \"ruby\", \"parameters\": { \"buildpack\": \"ruby_buildpack\" }},\n    { \"name\": \"nodejs\", \"parameters\": { \"buildpack\": \"nodejs_buildpack\" }},\n    { \"name\": \"go\", \"parameters\": { \"buildpack\": \"go_buildpack\" }},\n    { \"name\": \"python\", \"parameters\": { \"buildpack\": \"python_buildpack\" }},\n    { \"name\": \"php\", \"parameters\": { \"buildpack\": \"php_buildpack\" }},\n    { \"name\": \"binary\", \"parameters\": { \"buildpack\": \"binary_buildpack\" }},\n    { \"name\": \"dotnet_core\", \"parameters\": { \"buildpack\": \"dotnet_core_buildpack\" }},\n    { \"name\": \"application\" },\n    { \"name\": \"com.sap.application.content\" },\n    { \"name\": \"com.sap.integration\" },\n    { \"name\": \"com.sap.api.management\" }\n  ],\n  \"resource-types\": [\n    { \"name\": \"com.sap.xs.hdi-container\", \"parameters\": { \"service\": \"hana\", \"service-plan\": \"hdi-shared\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.hana-sbss\", \"parameters\": { \"service\": \"hana\", \"service-plan\": \"sbss\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.hana-schema\", \"parameters\": { \"service\": \"hana\", \"service-plan\": \"schema\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.hana-securestore\", \"parameters\": { \"service\": \"hana\", \"service-plan\": \"securestore\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.managed-hdi-container\", \"parameters\": { \"service\": \"managed-hana\", \"service-plan\": \"hdi-shared\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.managed-hana-schema\", \"parameters\": { \"service\": \"managed-hana\", \"service-plan\": \"schema\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.managed-hana-securestore\", \"parameters\": { \"service\": \"managed-hana\", \"service-plan\": \"securestore\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.job-scheduler\", \"parameters\": { \"service\": \"jobscheduler\", \"service-plan\": \"lite\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.fs\", \"parameters\": { \"service\": \"fs-storage\", \"service-plan\": \"lite\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.uaa\", \"parameters\": { \"service\": \"xsuaa\", \"service-plan\": \"application\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.uaa-space\", \"parameters\": { \"service\": \"xsuaa\", \"service-plan\": \"application\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.uaa-devuser\", \"parameters\": { \"service\": \"xsuaa\", \"service-plan\": \"application\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.uaa-application\", \"parameters\": { \"service\": \"xsuaa\", \"service-plan\": \"application\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.uaa-broker\", \"parameters\": { \"service\": \"xsuaa\", \"service-plan\": \"broker\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.application-logs\", \"parameters\": { \"service\": \"application-logs\", \"service-plan\": \"lite\", \"skip-service-updates\": { \"parameters\": true, \"plan\": true }, \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.portal.site-host\", \"parameters\": { \"service\": \"portal-services\", \"service-plan\": \"site-host\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.portal.site-content\", \"parameters\": { \"service\": \"portal-services\", \"service-plan\": \"site-content\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.sap.xs.dwf-edw-client\", \"parameters\": { \"service\": \"dwf\", \"service-plan\": \"edw-client\", \"type\": \"managed-service\"}},\n    { \"name\": \"com.sap.xs.auditlog\", \"parameters\": { \"service\": \"auditlog\", \"service-plan\": \"standard\", \"skip-service-updates\": { \"parameters\": true, \"plan\": true }, \"type\": \"managed-service\" }},\n    { \"name\": \"auditlog\", \"parameters\": { \"service\": \"auditlog\", \"service-plan\": \"standard\", \"skip-service-updates\": { \"parameters\": true, \"plan\": true }, \"type\": \"managed-service\" }},\n    { \"name\": \"org.mongodb\", \"parameters\": { \"service\": \"mongodb\", \"service-plan\": \"v3.0-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"mongodb\", \"parameters\": { \"service\": \"mongodb\", \"service-plan\": \"v3.0-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"org.postgresql\", \"parameters\": { \"service\": \"postgresql\", \"service-plan\": \"v9.4-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"postgresql\", \"parameters\": { \"service\": \"postgresql\", \"service-plan\": \"v9.4-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.rabbitmq\", \"parameters\": { \"service\": \"rabbitmq\", \"service-plan\": \"v3.6-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"rabbitmq\", \"parameters\": { \"service\": \"rabbitmq\", \"service-plan\": \"v3.6-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"io.redis\", \"parameters\": { \"service\": \"redis\", \"service-plan\": \"v3.0-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"redis\", \"parameters\": { \"service\": \"redis\", \"service-plan\": \"v3.0-dev\", \"type\": \"managed-service\" }},\n    { \"name\": \"com.influxdb\", \"parameters\": { \"service\": \"influxdb\", \"service-plan\": \"v0.13-container\", \"type\": \"managed-service\" }},\n    { \"name\": \"influxdb\", \"parameters\": { \"service\": \"influxdb\", \"service-plan\": \"v0.13-container\", \"type\": \"managed-service\" }},\n    { \"name\": \"org.cloudfoundry.user-provided-service\", \"parameters\": { \"type\": \"user-provided-service\" }},\n    { \"name\": \"org.cloudfoundry.managed-service\", \"parameters\": { \"type\": \"managed-service\" }},\n    { \"name\": \"org.cloudfoundry.existing-service\", \"parameters\": { \"type\": \"existing-service\" }},\n    { \"name\": \"org.cloudfoundry.existing-service-key\", \"parameters\": { \"type\": \"existing-service-key\" }},\n    { \"name\": \"mta-provided\", \"parameters\": { \"type\": \"mta-provides-dependency\" }},\n    { \"name\": \"configuration\", \"parameters\": { \"type\": \"configuration\" }},\n    { \"name\": \"autoscaler\", \"parameters\": { \"service\": \"autoscaler\", \"service-plan\": \"lite\", \"skip-service-updates\": { \"parameters\": true, \"plan\": true }, \"type\": \"managed-service\" }},\n    { \"name\": \"application-logs\", \"parameters\": { \"service\": \"application-logs\", \"service-plan\": \"lite\", \"skip-service-updates\": { \"parameters\": true, \"plan\": true }, \"type\": \"managed-service\" }},\n    { \"name\": \"connectivity\", \"parameters\": { \"service\": \"connectivity\", \"service-plan\": \"lite\", \"type\": \"managed-service\" }},\n    { \"name\": \"feature-flags\", \"parameters\": { \"service\": \"feature-flags\", \"service-plan\": \"lite\", \"type\": \"managed-service\" }},\n    { \"name\": \"metering\", \"parameters\": { \"service\": \"metering\", \"service-plan\": \"standard\", \"type\": \"managed-service\" }},\n    { \"name\": \"ml-foundation-services\", \"parameters\": { \"service\": \"ml-foundation-services\", \"service-plan\": \"lite\", \"type\": \"managed-service\" }},\n    { \"name\": \"objectstore\", \"parameters\": { \"service\": \"objectstore\", \"service-plan\": \"s3-standard\", \"type\": \"managed-service\" }},\n    { \"name\": \"destination\", \"parameters\": { \"service\": \"destination\", \"service-plan\": \"lite\", \"type\": \"managed-service\" }}\n  ]\n}\n",
+  "SKIP_SSL_VALIDATION" : "false",
+  "DB_TYPE" : "POSTGRESQL",
+  "FLOWABLE_JOB_EXECUTOR_MAX_THREADS" : "32",
+  "XS_TYPE" : "CF",
+  "VERSION" : "1.138.0",
+  "BASIC_AUTH_ENABLED" : "true",
+  "FLOWABLE_JOB_EXECUTOR_QUEUE_CAPACITY" : "16",
+  "GLOBAL_AUDITOR_USER" : "provisioned_user_xsa_deploy-serviceDSglobalAuditorUser",
+  "FLOWABLE_JOB_EXECUTOR_CORE_THREADS" : "8"
+}#
+
+#2.0#2022 06 03 00:00:56.836#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-10###
+[XS2StartProcessListener] Current user: lgarcia@valorem.com.co#
+
+#2.0#2022 06 03 00:00:56.836#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-10###
+[XS2StartProcessListener] Client space: VALOREM_DEV#
+
+#2.0#2022 06 03 00:00:56.836#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-10###
+[XS2StartProcessListener] Client organization: Valorem S.A.S  Valores Bavaria_valorem#
+
+#2.0#2022 06 03 00:00:56.837#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.startEvent#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-10###
+[XS2StartProcessListener] Process variables: {
+  "abortOnError" : false,
+  "mtaId" : "ValoremAppHTML",
+  "keepFiles" : false,
+  "verifyArchiveSignature" : false,
+  "noFailOnMissingPermissions" : false,
+  "deleteServiceBrokers" : false,
+  "appArchiveId" : "4492c05d-052d-4ecf-a09f-3990762520ab",
+  "gitUri" : "",
+  "deleteServiceKeys" : "********",
+  "noRestartSubscribedApps" : false,
+  "noStart" : false,
+  "deleteServices" : false
+}#
+
+#2.0#2022 06 03 00:00:56.901#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ValidateDeployParametersStep] Executing task "validateParametersTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:56.901#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ValidateDeployParametersStep] Validating parameters...#
+
+#2.0#2022 06 03 00:00:56.901#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ValidateDeployParametersStep] Deploying in org "Valorem S.A.S  Valores Bavaria_valorem" and space "VALOREM_DEV"#
+
+#2.0#2022 06 03 00:00:56.909#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ValidateDeployParametersStep] Parameters validated#
+
+#2.0#2022 06 03 00:00:56.910#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.validateParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+Step "Validate Parameters" finished#
+
+#2.0#2022 06 03 00:00:56.949#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.deleteRemainingFileParts#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2769###
+[DeleteRemainingFileParts] Executing task "deleteRemainingFileParts" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:56.951#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.deleteRemainingFileParts#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2769###
+Step "Delete Remaining File Parts" finished#
+
+#2.0#2022 06 03 00:00:56.989#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] Executing task "processArchiveTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:56.990#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] Processing MTA archive...#
+
+#2.0#2022 06 03 00:00:56.990#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] MTA Archive ID: 4492c05d-052d-4ecf-a09f-3990762520ab#
+
+#2.0#2022 06 03 00:00:57.111#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] MTA Archive Modules: [ValoremAppHTML_ui_deployer, valoremapphtml-approuter]#
+
+#2.0#2022 06 03 00:00:57.111#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] MTA Archive Requires: []#
+
+#2.0#2022 06 03 00:00:57.111#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] MTA Archive Resources: []#
+
+#2.0#2022 06 03 00:00:57.122#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[XS2ProcessMtaArchiveStep] MTA archive processed#
+
+#2.0#2022 06 03 00:00:57.125#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processArchiveTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+Step "Process Archive" finished#
+
+#2.0#2022 06 03 00:00:57.191#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessMtaExtensionDescriptorsStep] Executing task "processExtensionDescriptorsTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:57.193#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessMtaExtensionDescriptorsStep] Processing MTA extension descriptors...#
+
+#2.0#2022 06 03 00:00:57.193#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessMtaExtensionDescriptorsStep] Extension descriptors: [ ]#
+
+#2.0#2022 06 03 00:00:57.193#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessMtaExtensionDescriptorsStep] MTA extension descriptors processed#
+
+#2.0#2022 06 03 00:00:57.197#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processExtensionDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+Step "Process Extension Descriptors" finished#
+
+#2.0#2022 06 03 00:00:57.239#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[DetectMtaSchemaVersionStep] Executing task "detectSchemaVersionTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:57.240#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[DetectMtaSchemaVersionStep] Detecting MTA major schema version...#
+
+#2.0#2022 06 03 00:00:57.242#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[DetectMtaSchemaVersionStep] Detected MTA schema version: "3"#
+
+#2.0#2022 06 03 00:00:57.249#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectSchemaVersionTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+Step "Detect Schema Version" finished#
+
+#2.0#2022 06 03 00:00:57.289#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[MergeDescriptorsStep] Executing task "mergeDescriptorsTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:57.290#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[MergeDescriptorsStep] Validating and merging descriptors...#
+
+#2.0#2022 06 03 00:00:57.292#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[MergeDescriptorsStep] Merged deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.2.0",
+  "id" : "ValoremAppHTML",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "valoremapphtml-approuter",
+    "type" : "javascript.nodejs",
+    "path" : "valoremapphtml-approuter",
+    "properties" : { },
+    "parameters" : {
+      "disk-quota" : "256M",
+      "memory" : "256M"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_runtime",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "valoremapphtml-approuter",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_ui_deployer",
+    "type" : "com.sap.application.content",
+    "path" : "ValoremAppHTML_ui_deployer",
+    "properties" : { },
+    "parameters" : { },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_host",
+      "properties" : { },
+      "parameters" : {
+        "content-target" : true
+      },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_ui_deployer",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_runtime",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "service-plan" : "app-runtime",
+      "type" : "managed-service",
+      "service" : "html5-apps-repo"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_host",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "service-plan" : "app-host",
+      "type" : "managed-service",
+      "service" : "html5-apps-repo"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  } ],
+  "parameters" : { },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+
+#2.0#2022 06 03 00:00:57.293#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[MergeDescriptorsStep] Descriptors validated and merged#
+
+#2.0#2022 06 03 00:00:57.294#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.mergeDescriptorsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Merge Descriptors" finished#
+
+#2.0#2022 06 03 00:00:57.333#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Executing task "detectDeployedMtaTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:57.334#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Detecting deployed MTA...#
+
+#2.0#2022 06 03 00:00:57.438#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Detecting MTA by id ValoremAppHTML and namespace null#
+
+#2.0#2022 06 03 00:00:57.438#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Getting applications by metadata label selector "mta_id=ab5d8c71c9a57b9a7b09df4f938f1f09,!mta_namespace"...#
+
+#2.0#2022 06 03 00:00:57.529#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Getting service instances by metadata label selector "mta_id=ab5d8c71c9a57b9a7b09df4f938f1f09,!mta_namespace"...#
+
+#2.0#2022 06 03 00:00:58.513#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Deployed MTA: {
+  "metadata" : {
+    "id" : "ValoremAppHTML",
+    "version" : "0.0.1"
+  },
+  "applications" : [ ],
+  "services" : [ {
+    "name" : "ValoremAppHTML_html_repo_runtime",
+    "metadata" : {
+      "guid" : "3d54ec1b-5a91-46e4-8835-3e6050140d65",
+      "createdAt" : [ 2022, 6, 2, 23, 28, 46 ],
+      "updatedAt" : [ 2022, 6, 2, 23, 28, 46 ],
+      "url" : "/v2/service_instances/3d54ec1b-5a91-46e4-8835-3e6050140d65"
+    },
+    "v3Metadata" : {
+      "annotations" : {
+        "mta_id" : "ValoremAppHTML",
+        "mta_version" : "0.0.1",
+        "mta_resource" : "{\"name\":\"ValoremAppHTML_html_repo_runtime\"}"
+      },
+      "labels" : {
+        "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+      }
+    },
+    "label" : "html5-apps-repo",
+    "plan" : "app-runtime",
+    "credentials" : "********",
+    "tags" : [ ],
+    "type" : "managed_service_instance",
+    "lastOperation" : {
+      "type" : "CREATE",
+      "description" : "",
+      "state" : "SUCCEEDED"
+    },
+    "resourceName" : "ValoremAppHTML_html_repo_runtime"
+  }, {
+    "name" : "ValoremAppHTML_html_repo_host",
+    "metadata" : {
+      "guid" : "d968231d-443a-4147-af7e-bd8a5ae5e750",
+      "createdAt" : [ 2022, 6, 2, 23, 28, 46 ],
+      "updatedAt" : [ 2022, 6, 2, 23, 28, 46 ],
+      "url" : "/v2/service_instances/d968231d-443a-4147-af7e-bd8a5ae5e750"
+    },
+    "v3Metadata" : {
+      "annotations" : {
+        "mta_id" : "ValoremAppHTML",
+        "mta_version" : "0.0.1",
+        "mta_resource" : "{\"name\":\"ValoremAppHTML_html_repo_host\"}"
+      },
+      "labels" : {
+        "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+      }
+    },
+    "label" : "html5-apps-repo",
+    "plan" : "app-host",
+    "credentials" : "********",
+    "tags" : [ ],
+    "type" : "managed_service_instance",
+    "lastOperation" : {
+      "type" : "CREATE",
+      "description" : "",
+      "state" : "SUCCEEDED"
+    },
+    "resourceName" : "ValoremAppHTML_html_repo_host"
+  } ]
+}#
+
+#2.0#2022 06 03 00:00:58.514#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[DetectDeployedMtaStep] Detected deployed MTA with namespace "null", ID "ValoremAppHTML" and version "0.0.1"#
+
+#2.0#2022 06 03 00:00:58.519#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.detectDeployedMtaTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+Step "Detect Deployed MTA" finished#
+
+#2.0#2022 06 03 00:00:58.560#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Executing task "collectSystemParametersTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:58.561#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Collecting system parameters...#
+
+#2.0#2022 06 03 00:00:58.561#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Getting default domain...#
+
+#2.0#2022 06 03 00:00:58.625#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Default domain: cfapps.us10.hana.ondemand.com#
+
+#2.0#2022 06 03 00:00:58.625#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Checking for overwriting read-only parameters for mta with id: "ValoremAppHTML"#
+
+#2.0#2022 06 03 00:00:58.625#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] No read-only parameters are overwritten#
+
+#2.0#2022 06 03 00:00:58.656#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Descriptor with system parameters: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.2.0",
+  "id" : "ValoremAppHTML",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "valoremapphtml-approuter",
+    "type" : "javascript.nodejs",
+    "path" : "valoremapphtml-approuter",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "${protocol}://${default-uri}",
+      "default-app-name" : "valoremapphtml-approuter",
+      "generated-password" : "********",
+      "default-uri" : "${host}.${domain}",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "instances" : "${default-instances}",
+      "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+      "app-name" : "${default-app-name}",
+      "protocol" : "https",
+      "disk-quota" : "256M",
+      "domain" : "${default-domain}",
+      "host" : "${default-host}",
+      "generated-user" : "********",
+      "timestamp" : "20220603000058"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_runtime",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "valoremapphtml-approuter",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_ui_deployer",
+    "type" : "com.sap.application.content",
+    "path" : "ValoremAppHTML_ui_deployer",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "${protocol}://${default-uri}",
+      "default-app-name" : "ValoremAppHTML_ui_deployer",
+      "generated-password" : "********",
+      "default-uri" : "${host}.${domain}",
+      "default-instances" : 1,
+      "instances" : "${default-instances}",
+      "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+      "app-name" : "${default-app-name}",
+      "protocol" : "https",
+      "domain" : "${default-domain}",
+      "host" : "${default-host}",
+      "generated-user" : "********",
+      "timestamp" : "20220603000058"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_host",
+      "properties" : { },
+      "parameters" : {
+        "content-target" : true
+      },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_ui_deployer",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_runtime",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "${default-service-name}",
+      "service-plan" : "app-runtime",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ValoremAppHTML_html_repo_runtime",
+      "type" : "managed-service",
+      "default-service-name" : "ValoremAppHTML_html_repo_runtime",
+      "default-container-name" : "VALOREM_S_A_S__VALORES_BAVARIA_VALOREM_VALOREM_DEV_VALOR6D8FC12E"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_host",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "${default-service-name}",
+      "service-plan" : "app-host",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ValoremAppHTML_html_repo_host",
+      "type" : "managed-service",
+      "default-service-name" : "ValoremAppHTML_html_repo_host",
+      "default-container-name" : "VALOREM_S_A_S__VALORES_BAVARIA_VALOREM_VALOREM_DEV_VALOR60AD70CE"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  } ],
+  "parameters" : {
+    "authorization-url" : "********",
+    "org-guid" : "5b08f324-b38a-4a95-b47a-6c0b72139b91",
+    "org" : "Valorem S.A.S  Valores Bavaria_valorem",
+    "deploy-target" : "Valorem S.A.S  Valores Bavaria_valorem VALOREM_DEV",
+    "space" : "VALOREM_DEV",
+    "xs-api-url" : "https://api.cf.us10.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.us10.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.us10.hana.ondemand.com",
+    "xs-auth-url" : "********",
+    "space-guid" : "5646f2b9-f16c-47da-b528-7c764649203a",
+    "user" : "********",
+    "controller-url" : "https://api.cf.us10.hana.ondemand.com"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+
+#2.0#2022 06 03 00:00:58.657#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Version rule: SAME_HIGHER#
+
+#2.0#2022 06 03 00:00:58.658#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Detected new MTA version: "0.0.1"#
+
+#2.0#2022 06 03 00:00:58.663#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] Deployed MTA version: "0.0.1"#
+
+#2.0#2022 06 03 00:00:58.667#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] MTA accepted for deployment#
+
+#2.0#2022 06 03 00:00:58.668#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+[CollectSystemParametersStep] System parameters collected#
+
+#2.0#2022 06 03 00:00:58.669#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.collectSystemParametersTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2770###
+Step "Collect System Parameters" finished#
+
+#2.0#2022 06 03 00:00:58.708#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+[ProcessDescriptorStep] Executing task "processDescriptorTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:58.710#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+[ProcessDescriptorStep] Resolving properties and parameters in merged descriptor...#
+
+#2.0#2022 06 03 00:00:58.712#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+[ProcessDescriptorStep] Subscriptions: [ ]#
+
+#2.0#2022 06 03 00:00:58.712#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+[ProcessDescriptorStep] MTA Modules: [ValoremAppHTML_ui_deployer, valoremapphtml-approuter]#
+
+#2.0#2022 06 03 00:00:58.713#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+[ProcessDescriptorStep] Resolved deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.2.0",
+  "id" : "ValoremAppHTML",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "valoremapphtml-approuter",
+    "type" : "javascript.nodejs",
+    "path" : "valoremapphtml-approuter",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "https://valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com",
+      "default-app-name" : "valoremapphtml-approuter",
+      "generated-password" : "********",
+      "default-uri" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "instances" : 1,
+      "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+      "app-name" : "valoremapphtml-approuter",
+      "protocol" : "https",
+      "disk-quota" : "256M",
+      "domain" : "cfapps.us10.hana.ondemand.com",
+      "host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+      "generated-user" : "********",
+      "timestamp" : "20220603000058"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_runtime",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "valoremapphtml-approuter",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_ui_deployer",
+    "type" : "com.sap.application.content",
+    "path" : "ValoremAppHTML_ui_deployer",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "https://valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712.cfapps.us10.hana.ondemand.com",
+      "default-app-name" : "ValoremAppHTML_ui_deployer",
+      "generated-password" : "********",
+      "default-uri" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712.cfapps.us10.hana.ondemand.com",
+      "default-instances" : 1,
+      "instances" : 1,
+      "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+      "app-name" : "ValoremAppHTML_ui_deployer",
+      "protocol" : "https",
+      "domain" : "cfapps.us10.hana.ondemand.com",
+      "host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+      "generated-user" : "********",
+      "timestamp" : "20220603000058"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_host",
+      "properties" : { },
+      "parameters" : {
+        "content-target" : true
+      },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_ui_deployer",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_runtime",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "ValoremAppHTML_html_repo_runtime",
+      "service-plan" : "app-runtime",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ValoremAppHTML_html_repo_runtime",
+      "type" : "managed-service",
+      "default-service-name" : "ValoremAppHTML_html_repo_runtime",
+      "default-container-name" : "VALOREM_S_A_S__VALORES_BAVARIA_VALOREM_VALOREM_DEV_VALOR6D8FC12E"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_host",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "ValoremAppHTML_html_repo_host",
+      "service-plan" : "app-host",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ValoremAppHTML_html_repo_host",
+      "type" : "managed-service",
+      "default-service-name" : "ValoremAppHTML_html_repo_host",
+      "default-container-name" : "VALOREM_S_A_S__VALORES_BAVARIA_VALOREM_VALOREM_DEV_VALOR60AD70CE"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  } ],
+  "parameters" : {
+    "authorization-url" : "********",
+    "org-guid" : "5b08f324-b38a-4a95-b47a-6c0b72139b91",
+    "org" : "Valorem S.A.S  Valores Bavaria_valorem",
+    "deploy-target" : "Valorem S.A.S  Valores Bavaria_valorem VALOREM_DEV",
+    "space" : "VALOREM_DEV",
+    "xs-api-url" : "https://api.cf.us10.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.us10.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.us10.hana.ondemand.com",
+    "xs-auth-url" : "********",
+    "space-guid" : "5646f2b9-f16c-47da-b528-7c764649203a",
+    "user" : "********",
+    "controller-url" : "https://api.cf.us10.hana.ondemand.com"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+
+#2.0#2022 06 03 00:00:58.713#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+[ProcessDescriptorStep] Merged descriptor properties and parameters resolved#
+
+#2.0#2022 06 03 00:00:58.715#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.processDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2767###
+Step "Process Descriptor Step" finished#
+
+#2.0#2022 06 03 00:00:58.757#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Executing task "buildDeployModelTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:58.759#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Building cloud deployment model...#
+
+#2.0#2022 06 03 00:00:58.762#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] MTA archive modules: [ValoremAppHTML_ui_deployer, valoremapphtml-approuter]#
+
+#2.0#2022 06 03 00:00:58.762#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Deployed modules: []#
+
+#2.0#2022 06 03 00:00:58.763#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] MTA modules: [ValoremAppHTML_ui_deployer, valoremapphtml-approuter]#
+
+#2.0#2022 06 03 00:00:58.763#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Service keys to create: {
+  "ValoremAppHTML_html_repo_runtime" : [ ],
+  "ValoremAppHTML_html_repo_host" : [ ]
+}#
+
+#2.0#2022 06 03 00:00:58.764#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Modules to deploy: [{
+  "majorSchemaVersion" : 3,
+  "name" : "valoremapphtml-approuter",
+  "type" : "javascript.nodejs",
+  "path" : "valoremapphtml-approuter",
+  "properties" : { },
+  "parameters" : {
+    "default-url" : "https://valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com",
+    "default-app-name" : "valoremapphtml-approuter",
+    "generated-password" : "********",
+    "default-uri" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com",
+    "memory" : "256M",
+    "default-instances" : 1,
+    "instances" : 1,
+    "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+    "app-name" : "valoremapphtml-approuter",
+    "protocol" : "https",
+    "disk-quota" : "256M",
+    "dependency-type" : "soft",
+    "domain" : "cfapps.us10.hana.ondemand.com",
+    "host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+    "generated-user" : "********",
+    "timestamp" : "20220603000058"
+  },
+  "requiredDependencies" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_runtime",
+    "properties" : { },
+    "parameters" : { },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  } ],
+  "providedDependencies" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "valoremapphtml-approuter",
+    "isPublic" : false,
+    "properties" : { },
+    "parameters" : { },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  } ],
+  "propertiesMetadata" : {
+    "metadata" : { }
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  },
+  "hooks" : [ ]
+}, {
+  "majorSchemaVersion" : 3,
+  "name" : "ValoremAppHTML_ui_deployer",
+  "type" : "com.sap.application.content",
+  "path" : "ValoremAppHTML_ui_deployer",
+  "properties" : { },
+  "parameters" : {
+    "default-url" : "https://valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712.cfapps.us10.hana.ondemand.com",
+    "default-app-name" : "ValoremAppHTML_ui_deployer",
+    "generated-password" : "********",
+    "default-uri" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712.cfapps.us10.hana.ondemand.com",
+    "default-instances" : 1,
+    "instances" : 1,
+    "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+    "app-name" : "ValoremAppHTML_ui_deployer",
+    "protocol" : "https",
+    "dependency-type" : "soft",
+    "domain" : "cfapps.us10.hana.ondemand.com",
+    "host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+    "generated-user" : "********",
+    "timestamp" : "20220603000058"
+  },
+  "requiredDependencies" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_host",
+    "properties" : { },
+    "parameters" : {
+      "content-target" : true
+    },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  } ],
+  "providedDependencies" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_ui_deployer",
+    "isPublic" : false,
+    "properties" : { },
+    "parameters" : { },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  } ],
+  "propertiesMetadata" : {
+    "metadata" : { }
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  },
+  "hooks" : [ ]
+}]#
+
+#2.0#2022 06 03 00:00:58.765#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Custom domains: []#
+
+#2.0#2022 06 03 00:00:58.765#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Calculating resource batches...#
+
+#2.0#2022 06 03 00:00:58.765#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Calculating resource batches completed.#
+
+#2.0#2022 06 03 00:00:58.765#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildCloudDeployModelStep] Cloud deployment model built#
+
+#2.0#2022 06 03 00:00:58.768#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+Step "Build Deploy Model" finished#
+
+#2.0#2022 06 03 00:00:58.817#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Executing task "buildUndeployModelTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:58.818#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Building cloud undeployment model...#
+
+#2.0#2022 06 03 00:00:58.824#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] MTA modules: [ValoremAppHTML_ui_deployer, valoremapphtml-approuter]#
+
+#2.0#2022 06 03 00:00:58.824#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Modules to undeploy: [ ]#
+
+#2.0#2022 06 03 00:00:58.824#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Modules that wont be changed: {0}#
+
+#2.0#2022 06 03 00:00:58.826#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Subscriptions to delete: [ ]#
+
+#2.0#2022 06 03 00:00:58.827#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Cloud services to delete: []#
+
+#2.0#2022 06 03 00:00:58.827#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Cloud applications to undeploy: [ ]#
+
+#2.0#2022 06 03 00:00:58.827#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+[BuildCloudUndeployModelStep] Cloud undeployment model built#
+
+#2.0#2022 06 03 00:00:58.828#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildUndeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2773###
+Step "Build Undeploy Model" finished#
+
+#2.0#2022 06 03 00:00:58.870#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.addDomainsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[AddDomainsStep] Executing task "addDomainsTask" of process "3e4f1e10-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:58.872#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.addDomainsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[AddDomainsStep] Custom domains: []#
+
+#2.0#2022 06 03 00:00:58.873#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.addDomainsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Add Domains" finished#
+
+#2.0#2022 06 03 00:00:58.993#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ExtractBatchedServicesStep] Executing task "prepareModulesDeploymentTask" of process "3f930fb5-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:58.994#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ExtractBatchedServicesStep] Extracting services from batch#
+
+#2.0#2022 06 03 00:00:58.996#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[ExtractBatchedServicesStep] Services to create: [ {
+  "isOptional" : false,
+  "isManaged" : true,
+  "name" : "ValoremAppHTML_html_repo_runtime",
+  "v3Metadata" : {
+    "annotations" : {
+      "mta_id" : "ValoremAppHTML",
+      "mta_version" : "0.0.1",
+      "mta_resource" : "{\"name\":\"ValoremAppHTML_html_repo_runtime\"}"
+    },
+    "labels" : {
+      "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+    }
+  },
+  "label" : "html5-apps-repo",
+  "plan" : "app-runtime",
+  "credentials" : "********",
+  "tags" : [ ],
+  "type" : "managed_service_instance",
+  "resourceName" : "ValoremAppHTML_html_repo_runtime",
+  "shouldSkipParametersUpdate" : false,
+  "shouldSkipPlanUpdate" : false,
+  "shouldSkipTagsUpdate" : false,
+  "shouldSkipSyslogUrlUpdate" : false
+}, {
+  "isOptional" : false,
+  "isManaged" : true,
+  "name" : "ValoremAppHTML_html_repo_host",
+  "v3Metadata" : {
+    "annotations" : {
+      "mta_id" : "ValoremAppHTML",
+      "mta_version" : "0.0.1",
+      "mta_resource" : "{\"name\":\"ValoremAppHTML_html_repo_host\"}"
+    },
+    "labels" : {
+      "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+    }
+  },
+  "label" : "html5-apps-repo",
+  "plan" : "app-host",
+  "credentials" : "********",
+  "tags" : [ ],
+  "type" : "managed_service_instance",
+  "resourceName" : "ValoremAppHTML_html_repo_host",
+  "shouldSkipParametersUpdate" : false,
+  "shouldSkipPlanUpdate" : false,
+  "shouldSkipTagsUpdate" : false,
+  "shouldSkipSyslogUrlUpdate" : false
+} ]#
+
+#2.0#2022 06 03 00:00:58.997#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+Step "Extract Services From Batches" finished#
+
+#2.0#2022 06 03 00:00:59.082#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.CheckServiceOperationStateTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CheckServiceOperationStateStep] Executing task "CheckServiceOperationStateTask" of process "3fa3ffd5-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:59.083#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.CheckServiceOperationStateTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CheckServiceOperationStateStep] Getting service instance "ValoremAppHTML_html_repo_host"...#
+
+#2.0#2022 06 03 00:00:59.148#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.CheckServiceOperationStateTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[CheckServiceOperationStateStep] Executing task "CheckServiceOperationStateTask" of process "3fae6034-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:59.148#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.CheckServiceOperationStateTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[CheckServiceOperationStateStep] Getting service instance "ValoremAppHTML_html_repo_runtime"...#
+
+#2.0#2022 06 03 00:00:59.526#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.CheckServiceOperationStateTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+Step "Check for service operations in Progress" finished#
+
+#2.0#2022 06 03 00:00:59.642#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.CheckServiceOperationStateTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Check for service operations in Progress" finished#
+
+#2.0#2022 06 03 00:00:59.564#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[DetermineServiceCreateUpdateServiceActionsStep] Executing task "DetermineServiceCreateUpdateActionsTask" of process "3fa3ffd5-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:59.566#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[DetermineServiceCreateUpdateServiceActionsStep] Processing service "ValoremAppHTML_html_repo_host"...#
+
+#2.0#2022 06 03 00:00:59.571#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[DetermineServiceCreateUpdateServiceActionsStep] Getting service instance "ValoremAppHTML_html_repo_host"...#
+
+#2.0#2022 06 03 00:00:59.668#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineServiceCreateUpdateServiceActionsStep] Executing task "DetermineServiceCreateUpdateActionsTask" of process "3fae6034-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:00:59.669#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineServiceCreateUpdateServiceActionsStep] Processing service "ValoremAppHTML_html_repo_runtime"...#
+
+#2.0#2022 06 03 00:00:59.674#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineServiceCreateUpdateServiceActionsStep] Getting service instance "ValoremAppHTML_html_repo_runtime"...#
+
+#2.0#2022 06 03 00:01:00.083#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[DetermineServiceCreateUpdateServiceActionsStep] Existing service: {
+  "name" : "ValoremAppHTML_html_repo_host",
+  "metadata" : {
+    "guid" : "d968231d-443a-4147-af7e-bd8a5ae5e750",
+    "createdAt" : [ 2022, 6, 2, 23, 28, 46 ],
+    "updatedAt" : [ 2022, 6, 2, 23, 28, 46 ],
+    "url" : "/v2/service_instances/d968231d-443a-4147-af7e-bd8a5ae5e750"
+  },
+  "v3Metadata" : {
+    "annotations" : {
+      "mta_id" : "ValoremAppHTML",
+      "mta_version" : "0.0.1",
+      "mta_resource" : "{\"name\":\"ValoremAppHTML_html_repo_host\"}"
+    },
+    "labels" : {
+      "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+    }
+  },
+  "label" : "html5-apps-repo",
+  "plan" : "app-host",
+  "credentials" : "********",
+  "tags" : [ ],
+  "type" : "managed_service_instance",
+  "lastOperation" : {
+    "type" : "CREATE",
+    "description" : "",
+    "state" : "SUCCEEDED"
+  }
+}#
+
+#2.0#2022 06 03 00:01:00.083#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[DetermineServiceCreateUpdateServiceActionsStep] Getting parameters of service instance "d968231d-443a-4147-af7e-bd8a5ae5e750"...#
+
+#2.0#2022 06 03 00:01:00.194#Z#WARN#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[DetermineServiceCreateUpdateServiceActionsStep] Cannot retrieve service instance parameters of service "ValoremAppHTML_html_repo_host"#
+
+#2.0#2022 06 03 00:01:00.195#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+Step "Determine update actions" finished#
+
+#2.0#2022 06 03 00:01:00.651#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineServiceCreateUpdateServiceActionsStep] Existing service: {
+  "name" : "ValoremAppHTML_html_repo_runtime",
+  "metadata" : {
+    "guid" : "3d54ec1b-5a91-46e4-8835-3e6050140d65",
+    "createdAt" : [ 2022, 6, 2, 23, 28, 46 ],
+    "updatedAt" : [ 2022, 6, 2, 23, 28, 46 ],
+    "url" : "/v2/service_instances/3d54ec1b-5a91-46e4-8835-3e6050140d65"
+  },
+  "v3Metadata" : {
+    "annotations" : {
+      "mta_id" : "ValoremAppHTML",
+      "mta_version" : "0.0.1",
+      "mta_resource" : "{\"name\":\"ValoremAppHTML_html_repo_runtime\"}"
+    },
+    "labels" : {
+      "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+    }
+  },
+  "label" : "html5-apps-repo",
+  "plan" : "app-runtime",
+  "credentials" : "********",
+  "tags" : [ ],
+  "type" : "managed_service_instance",
+  "lastOperation" : {
+    "type" : "CREATE",
+    "description" : "",
+    "state" : "SUCCEEDED"
+  }
+}#
+
+#2.0#2022 06 03 00:01:00.651#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineServiceCreateUpdateServiceActionsStep] Getting parameters of service instance "3d54ec1b-5a91-46e4-8835-3e6050140d65"...#
+
+#2.0#2022 06 03 00:01:00.743#Z#WARN#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineServiceCreateUpdateServiceActionsStep] Cannot retrieve service instance parameters of service "ValoremAppHTML_html_repo_runtime"#
+
+#2.0#2022 06 03 00:01:00.746#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.DetermineServiceCreateUpdateActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Determine update actions" finished#
+
+#2.0#2022 06 03 00:01:00.964#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[PrepareModulesDeploymentStep] Executing task "prepareModulesDeploymentTask" of process "40bebe27-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:00.965#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+[PrepareModulesDeploymentStep] Preparing modules deployment...#
+
+#2.0#2022 06 03 00:01:00.970#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.prepareModulesDeploymentTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2768###
+Step "Prepare Modules Deployment" finished#
+
+#2.0#2022 06 03 00:01:01.114#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessDescriptorStep] Executing task "reprocessDescriptorTask" of process "40d490a4-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:01.116#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessDescriptorStep] Resolving properties and parameters in merged descriptor...#
+
+#2.0#2022 06 03 00:01:01.118#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessDescriptorStep] Subscriptions: [ ]#
+
+#2.0#2022 06 03 00:01:01.123#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessDescriptorStep] MTA Modules: [ValoremAppHTML_ui_deployer, valoremapphtml-approuter]#
+
+#2.0#2022 06 03 00:01:01.127#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessDescriptorStep] Resolved deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.2.0",
+  "id" : "ValoremAppHTML",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "valoremapphtml-approuter",
+    "type" : "javascript.nodejs",
+    "path" : "valoremapphtml-approuter",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "https://valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com",
+      "default-app-name" : "valoremapphtml-approuter",
+      "generated-password" : "********",
+      "default-uri" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "instances" : 1,
+      "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+      "app-name" : "valoremapphtml-approuter",
+      "protocol" : "https",
+      "disk-quota" : "256M",
+      "domain" : "cfapps.us10.hana.ondemand.com",
+      "host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115",
+      "generated-user" : "********",
+      "timestamp" : "20220603000058"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_runtime",
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "valoremapphtml-approuter",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_ui_deployer",
+    "type" : "com.sap.application.content",
+    "path" : "ValoremAppHTML_ui_deployer",
+    "properties" : { },
+    "parameters" : {
+      "default-url" : "https://valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712.cfapps.us10.hana.ondemand.com",
+      "default-app-name" : "ValoremAppHTML_ui_deployer",
+      "generated-password" : "********",
+      "default-uri" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712.cfapps.us10.hana.ondemand.com",
+      "default-instances" : 1,
+      "instances" : 1,
+      "default-host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+      "app-name" : "ValoremAppHTML_ui_deployer",
+      "protocol" : "https",
+      "domain" : "cfapps.us10.hana.ondemand.com",
+      "host" : "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo35de6712",
+      "generated-user" : "********",
+      "timestamp" : "20220603000058"
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_html_repo_host",
+      "properties" : { },
+      "parameters" : {
+        "content-target" : true
+      },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "ValoremAppHTML_ui_deployer",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_runtime",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "ValoremAppHTML_html_repo_runtime",
+      "service-plan" : "app-runtime",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ValoremAppHTML_html_repo_runtime",
+      "type" : "managed-service",
+      "default-service-name" : "ValoremAppHTML_html_repo_runtime",
+      "default-container-name" : "VALOREM_S_A_S__VALORES_BAVARIA_VALOREM_VALOREM_DEV_VALOR6D8FC12E"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "ValoremAppHTML_html_repo_host",
+    "type" : "org.cloudfoundry.managed-service",
+    "properties" : { },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "ValoremAppHTML_html_repo_host",
+      "service-plan" : "app-host",
+      "service" : "html5-apps-repo",
+      "generated-user" : "********",
+      "default-xsappname" : "ValoremAppHTML_html_repo_host",
+      "type" : "managed-service",
+      "default-service-name" : "ValoremAppHTML_html_repo_host",
+      "default-container-name" : "VALOREM_S_A_S__VALORES_BAVARIA_VALOREM_VALOREM_DEV_VALOR60AD70CE"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ]
+  } ],
+  "parameters" : {
+    "authorization-url" : "********",
+    "org-guid" : "5b08f324-b38a-4a95-b47a-6c0b72139b91",
+    "org" : "Valorem S.A.S  Valores Bavaria_valorem",
+    "deploy-target" : "Valorem S.A.S  Valores Bavaria_valorem VALOREM_DEV",
+    "space" : "VALOREM_DEV",
+    "xs-api-url" : "https://api.cf.us10.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.us10.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.us10.hana.ondemand.com",
+    "xs-auth-url" : "********",
+    "space-guid" : "5646f2b9-f16c-47da-b528-7c764649203a",
+    "user" : "********",
+    "controller-url" : "https://api.cf.us10.hana.ondemand.com"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+
+#2.0#2022 06 03 00:01:01.127#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[ProcessDescriptorStep] Merged descriptor properties and parameters resolved#
+
+#2.0#2022 06 03 00:01:01.128#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.reprocessDescriptorTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+Step "Re-Process Descriptor Step" finished#
+
+#2.0#2022 06 03 00:01:01.167#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildApplicationDeployModelStep] Executing task "buildApplicationDeployModelTask" of process "40d490a4-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:01.169#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildApplicationDeployModelStep] Building cloud deployment model for application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:01.173#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildApplicationDeployModelStep] No health-check-type is specified. Setting default type: port#
+
+#2.0#2022 06 03 00:01:01.173#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildApplicationDeployModelStep] Building configuration entries for org Valorem S.A.S  Valores Bavaria_valorem, space VALOREM_DEV, spaceId 5646f2b9-f16c-47da-b528-7c764649203a and namespace null!#
+
+#2.0#2022 06 03 00:01:01.174#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildApplicationDeployModelStep] Configuration entries to publish: [ ]#
+
+#2.0#2022 06 03 00:01:01.174#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[BuildApplicationDeployModelStep] Cloud deployment model for application built#
+
+#2.0#2022 06 03 00:01:01.176#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.buildApplicationDeployModelTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+Step "Build Application Deploy Model" finished#
+
+#2.0#2022 06 03 00:01:01.223#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CreateOrUpdateAppStep] Executing task "createAppTask" of process "40d490a4-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:01.225#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CreateOrUpdateAppStep] Getting application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:01.282#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CreateOrUpdateAppStep] Creating application "valoremapphtml-approuter" from MTA module "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:01.289#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CreateOrUpdateAppStep] Creating application "valoremapphtml-approuter" with memory "256", URIs "valorem-s-a-s--valores-bavaria-valorem-valorem-dev-valo2f922115.cfapps.us10.hana.ondemand.com" and staging: {
+  "buildpacks" : [ ],
+  "healthCheckType" : "port"
+}#
+
+#2.0#2022 06 03 00:01:02.372#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CreateOrUpdateAppStep] Updating environment of application "valoremapphtml-approuter"#
+
+#2.0#2022 06 03 00:01:02.500#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+[CreateOrUpdateAppStep] Application "valoremapphtml-approuter" created#
+
+#2.0#2022 06 03 00:01:02.503#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.createAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2771###
+Step "Create App" finished#
+
+#2.0#2022 06 03 00:01:02.662#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineApplicationServiceBindingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineApplicationServiceBindingActionsStep] Executing task "determineApplicationServiceBindingActionsTask" of process "41beca3e-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:02.664#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineApplicationServiceBindingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineApplicationServiceBindingActionsStep] Determine bind/unbind operations of application "valoremapphtml-approuter" to service instance "ValoremAppHTML_html_repo_runtime"#
+
+#2.0#2022 06 03 00:01:02.664#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineApplicationServiceBindingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineApplicationServiceBindingActionsStep] Getting application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:02.966#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineApplicationServiceBindingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineApplicationServiceBindingActionsStep] Binding parameters for application "valoremapphtml-approuter": { }#
+
+#2.0#2022 06 03 00:01:02.966#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineApplicationServiceBindingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[DetermineApplicationServiceBindingActionsStep] Calculated binding operations between application "valoremapphtml-approuter" and service instance "ValoremAppHTML_html_repo_runtime": unbind - false bind - true#
+
+#2.0#2022 06 03 00:01:02.967#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineApplicationServiceBindingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Determine Application Service Binding Actions" finished#
+
+#2.0#2022 06 03 00:01:03.011#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Executing task "bindServiceToApplicationTask" of process "41beca3e-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:03.013#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Binding service instance "ValoremAppHTML_html_repo_runtime" to application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:03.018#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Binding service instance "ValoremAppHTML_html_repo_runtime" to application "valoremapphtml-approuter" with parameters: { }#
+
+#2.0#2022 06 03 00:01:04.268#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Binding service instance "ValoremAppHTML_html_repo_runtime" to application "valoremapphtml-approuter" finished#
+
+#2.0#2022 06 03 00:01:04.271#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Bind Service to Application" finished#
+
+#2.0#2022 06 03 00:01:03.011#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Executing task "bindServiceToApplicationTask" of process "41beca3e-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:03.013#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Binding service instance "ValoremAppHTML_html_repo_runtime" to application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:03.018#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Binding service instance "ValoremAppHTML_html_repo_runtime" to application "valoremapphtml-approuter" with parameters: { }#
+
+#2.0#2022 06 03 00:01:04.268#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+[BindServiceToApplicationStep] Binding service instance "ValoremAppHTML_html_repo_runtime" to application "valoremapphtml-approuter" finished#
+
+#2.0#2022 06 03 00:01:04.271#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.bindServiceToApplicationTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2766###
+Step "Bind Service to Application" finished#
+
+#2.0#2022 06 03 00:01:04.416#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineVcapServicesPropertiesChangedTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+[DetermineVcapServicesPropertiesChangedStep] Executing task "determineVcapServicesPropertiesChangedTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:04.418#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineVcapServicesPropertiesChangedTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+[DetermineVcapServicesPropertiesChangedStep] VCAP_SERVICES properties for application "valoremapphtml-approuter" changed: true#
+
+#2.0#2022 06 03 00:01:04.419#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineVcapServicesPropertiesChangedTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+Step "Determine vcap services properties changed" finished#
+
+#2.0#2022 06 03 00:01:04.459#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.updateApplicationMetadataTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+[UpdateApplicationMetadataStep] Executing task "updateApplicationMetadataTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:04.460#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.updateApplicationMetadataTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+[UpdateApplicationMetadataStep] Getting application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:04.678#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.updateApplicationMetadataTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+[UpdateApplicationMetadataStep] Updating metadata of application "5d4590f1-336e-4dc0-a605-c6a16ce85dba" to: {
+  "annotations" : {
+    "mta_id" : "ValoremAppHTML",
+    "mta_version" : "0.0.1",
+    "mta_module" : "{\"name\":\"valoremapphtml-approuter\"}",
+    "mta_module_provided_dependencies" : "[]",
+    "mta_bound_services" : "[\"ValoremAppHTML_html_repo_runtime\"]"
+  },
+  "labels" : {
+    "mta_id" : "ab5d8c71c9a57b9a7b09df4f938f1f09"
+  }
+}#
+
+#2.0#2022 06 03 00:01:04.808#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.updateApplicationMetadataTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+[UpdateApplicationMetadataStep] Updated metadata of application "valoremapphtml-approuter"#
+
+#2.0#2022 06 03 00:01:04.809#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.updateApplicationMetadataTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2775###
+Step "Update Application Metadata" finished#
+
+#2.0#2022 06 03 00:01:04.847#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Executing task "uploadAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:04.848#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Upload app timeout in seconds: 3,600#
+
+#2.0#2022 06 03 00:01:04.848#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Uploading application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:05.084#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Getting application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:05.322#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Uploading file "valoremapphtml-approuter/data.zip" for application "valoremapphtml-approuter"#
+
+#2.0#2022 06 03 00:01:05.588#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Asynchronously uploading binaries for application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:06.031#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Started async upload of application "valoremapphtml-approuter"#
+
+#2.0#2022 06 03 00:01:06.043#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+[UploadAppStep] Updating environment of application "valoremapphtml-approuter"#
+
+#2.0#2022 06 03 00:01:06.078#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########App upload monitor: be5e941e-cfe3-4583-bf5d-0846d64fbd3a###
+[UploadAppStep] Upload status: PROCESSING_UPLOAD#
+
+#2.0#2022 06 03 00:01:06.222#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2772###
+Step "Upload App" finished#
+
+#2.0#2022 06 03 00:01:11.126#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########App upload monitor: be5e941e-cfe3-4583-bf5d-0846d64fbd3a###
+[UploadAppStep] Upload status: PROCESSING_UPLOAD#
+
+#2.0#2022 06 03 00:01:15.215#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2777###
+[UploadAppStep] Executing task "uploadAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:15.216#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2777###
+[UploadAppStep] Upload app timeout in seconds: 3,600#
+
+#2.0#2022 06 03 00:01:15.217#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2777###
+[UploadAppStep] Checking upload status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:15.217#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2777###
+[UploadAppStep] Getting package "be5e941e-cfe3-4583-bf5d-0846d64fbd3a"...#
+
+#2.0#2022 06 03 00:01:15.279#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2777###
+[UploadAppStep] Application "valoremapphtml-approuter" uploaded#
+
+#2.0#2022 06 03 00:01:15.281#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2777###
+Step "Upload App" finished#
+
+#2.0#2022 06 03 00:01:15.321#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.scaleAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2778###
+[ScaleAppStep] Executing task "scaleAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:15.322#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.scaleAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2778###
+[ScaleAppStep] Scaling application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:15.322#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.scaleAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2778###
+[ScaleAppStep] Scaling application "valoremapphtml-approuter" to "1" instances... #
+
+#2.0#2022 06 03 00:01:15.327#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.scaleAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2778###
+[ScaleAppStep] Updating instances of application "valoremapphtml-approuter" to: 1#
+
+#2.0#2022 06 03 00:01:15.506#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.scaleAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2778###
+[ScaleAppStep] Application "valoremapphtml-approuter" scaled#
+
+#2.0#2022 06 03 00:01:15.507#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.scaleAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2778###
+Step "Scale App" finished#
+
+#2.0#2022 06 03 00:01:15.545#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineDesiredStateAchievingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2779###
+[DetermineDesiredStateAchievingActionsStep] Executing task "determineDesiredStateAchievingActionsTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:15.546#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineDesiredStateAchievingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2779###
+[DetermineDesiredStateAchievingActionsStep] Getting application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:15.740#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineDesiredStateAchievingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2779###
+[DetermineDesiredStateAchievingActionsStep] Current state of application valoremapphtml-approuter: STOPPED#
+
+#2.0#2022 06 03 00:01:15.740#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineDesiredStateAchievingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2779###
+[DetermineDesiredStateAchievingActionsStep] Desired state of application valoremapphtml-approuter: STARTED#
+
+#2.0#2022 06 03 00:01:15.740#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineDesiredStateAchievingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2779###
+[DetermineDesiredStateAchievingActionsStep] Actions that should be executed on application valoremapphtml-approuter: [START, STAGE]#
+
+#2.0#2022 06 03 00:01:15.742#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.determineDesiredStateAchievingActionsTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2779###
+Step "Determine Desired State Achieving Actions" finished#
+
+#2.0#2022 06 03 00:01:16.176#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.uploadAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########App upload monitor: be5e941e-cfe3-4583-bf5d-0846d64fbd3a###
+[UploadAppStep] Upload status: READY#
+
+#2.0#2022 06 03 00:01:15.784#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2780###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:15.787#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2780###
+[StageAppStep] Staging application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:15.791#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2780###
+[StageAppStep] Creating build for package "be5e941e-cfe3-4583-bf5d-0846d64fbd3a"...#
+
+#2.0#2022 06 03 00:01:16.745#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2780###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:01:25.212#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:25.320#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:25.320#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Getting build "ff32dcc6-852a-415f-882a-b4a8761054d2"...#
+
+#2.0#2022 06 03 00:01:25.387#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": PENDING#
+
+#2.0#2022 06 03 00:01:25.387#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:25.566#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:01:35.427#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:35.582#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:35.582#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Getting build "ff32dcc6-852a-415f-882a-b4a8761054d2"...#
+
+#2.0#2022 06 03 00:01:35.652#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": PENDING#
+
+#2.0#2022 06 03 00:01:35.653#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:35.857#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3250###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:01:45.415#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3254###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:45.416#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3254###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:45.416#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3254###
+[StageAppStep] Getting build "ff32dcc6-852a-415f-882a-b4a8761054d2"...#
+
+#2.0#2022 06 03 00:01:45.465#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3254###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": PENDING#
+
+#2.0#2022 06 03 00:01:45.466#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3254###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:45.680#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3254###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:01:55.445#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3252###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:01:55.446#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3252###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:55.446#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3252###
+[StageAppStep] Getting build "ff32dcc6-852a-415f-882a-b4a8761054d2"...#
+
+#2.0#2022 06 03 00:01:55.478#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3252###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": PENDING#
+
+#2.0#2022 06 03 00:01:55.479#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3252###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:01:55.630#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3252###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:02:05.451#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:02:05.452#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:05.452#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+[StageAppStep] Getting build "ff32dcc6-852a-415f-882a-b4a8761054d2"...#
+
+#2.0#2022 06 03 00:02:05.523#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": FAILED#
+
+#2.0#2022 06 03 00:02:05.524#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:05.706#Z#ERROR#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+[StageAppStep] Error staging application "valoremapphtml-approuter": BuildpackCompileFailed - App staging failed in the buildpack compile phase
+Download the application logs via the dmol command and check them for more information.#
+
+#2.0#2022 06 03 00:02:05.714#Z#ERROR#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+Exception caught#
+
+org.cloudfoundry.multiapps.common.SLException: A step of the process has failed. Retrying it may solve the issue.
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.executeInternal(SyncFlowableStep.java:76) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.lambda$execute$0(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.util.LoggingUtil.logWithCorrelationId(LoggingUtil.java:14) ~[multiapps-controller-core-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.execute(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.flowable.engine.impl.delegate.invocation.JavaDelegateInvocation.invoke(JavaDelegateInvocation.java:35) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DelegateInvocation.proceed(DelegateInvocation.java:32) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DefaultDelegateInterceptor.handleInvocation(DefaultDelegateInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.bpmn.behavior.ServiceTaskDelegateExpressionActivityBehavior.execute(ServiceTaskDelegateExpressionActivityBehavior.java:157) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeActivityBehavior(ContinueProcessOperation.java:313) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeSynchronous(ContinueProcessOperation.java:170) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.continueThroughFlowNode(ContinueProcessOperation.java:125) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.run(ContinueProcessOperation.java:88) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.AbstractEngineConfiguration.lambda$new$0(AbstractEngineConfiguration.java:173) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperation(CommandInvoker.java:97) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperations(CommandInvoker.java:81) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:64) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.BpmnOverrideContextInterceptor.execute(BpmnOverrideContextInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.TransactionContextInterceptor.execute(TransactionContextInterceptor.java:53) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:83) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.spring.SpringTransactionInterceptor.lambda$execute$0(SpringTransactionInterceptor.java:57) ~[flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) [spring-tx-5.3.18.jar:5.3.18]
+	at org.flowable.common.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:57) [flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:30) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:56) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:51) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.executeJob(ExecuteAsyncRunnable.java:127) [flowable-job-service-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.run(ExecuteAsyncRunnable.java:115) [flowable-job-service-6.6.0.jar:6.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+#2.0#2022 06 03 00:02:05.719#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3258###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:02:06.953#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2783###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:02:06.955#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2783###
+[StageAppStep] Staging application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:06.960#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2783###
+[StageAppStep] Creating build for package "be5e941e-cfe3-4583-bf5d-0846d64fbd3a"...#
+
+#2.0#2022 06 03 00:02:08.790#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2783###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:02:15.480#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:02:15.481#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:15.482#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+[StageAppStep] Getting build "0de79228-b065-4431-886c-e15678998988"...#
+
+#2.0#2022 06 03 00:02:15.546#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": FAILED#
+
+#2.0#2022 06 03 00:02:15.547#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:15.721#Z#ERROR#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+[StageAppStep] Error staging application "valoremapphtml-approuter": BuildpackCompileFailed - App staging failed in the buildpack compile phase
+Download the application logs via the dmol command and check them for more information.#
+
+#2.0#2022 06 03 00:02:15.726#Z#ERROR#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+Exception caught#
+
+org.cloudfoundry.multiapps.common.SLException: A step of the process has failed. Retrying it may solve the issue.
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.executeInternal(SyncFlowableStep.java:76) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.lambda$execute$0(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.util.LoggingUtil.logWithCorrelationId(LoggingUtil.java:14) ~[multiapps-controller-core-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.execute(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.flowable.engine.impl.delegate.invocation.JavaDelegateInvocation.invoke(JavaDelegateInvocation.java:35) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DelegateInvocation.proceed(DelegateInvocation.java:32) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DefaultDelegateInterceptor.handleInvocation(DefaultDelegateInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.bpmn.behavior.ServiceTaskDelegateExpressionActivityBehavior.execute(ServiceTaskDelegateExpressionActivityBehavior.java:157) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeActivityBehavior(ContinueProcessOperation.java:313) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeSynchronous(ContinueProcessOperation.java:170) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.continueThroughFlowNode(ContinueProcessOperation.java:125) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.run(ContinueProcessOperation.java:88) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.AbstractEngineConfiguration.lambda$new$0(AbstractEngineConfiguration.java:173) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperation(CommandInvoker.java:97) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperations(CommandInvoker.java:81) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:64) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.BpmnOverrideContextInterceptor.execute(BpmnOverrideContextInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.TransactionContextInterceptor.execute(TransactionContextInterceptor.java:53) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:83) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.spring.SpringTransactionInterceptor.lambda$execute$0(SpringTransactionInterceptor.java:57) ~[flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) [spring-tx-5.3.18.jar:5.3.18]
+	at org.flowable.common.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:57) [flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:30) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:56) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:51) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.executeJob(ExecuteAsyncRunnable.java:127) [flowable-job-service-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.run(ExecuteAsyncRunnable.java:115) [flowable-job-service-6.6.0.jar:6.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+#2.0#2022 06 03 00:02:15.733#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3256###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:02:16.456#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2784###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:02:16.458#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2784###
+[StageAppStep] Staging application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:16.464#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2784###
+[StageAppStep] Creating build for package "be5e941e-cfe3-4583-bf5d-0846d64fbd3a"...#
+
+#2.0#2022 06 03 00:02:17.196#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2784###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:02:25.467#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:02:25.599#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+[StageAppStep] Checking status of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:25.600#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+[StageAppStep] Getting build "b2c3f2cf-28a6-420e-8f34-05372968465f"...#
+
+#2.0#2022 06 03 00:02:25.664#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+[StageAppStep] Staging status of application "valoremapphtml-approuter": FAILED#
+
+#2.0#2022 06 03 00:02:25.665#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+[StageAppStep] Getting recent logs of application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:25.882#Z#ERROR#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+[StageAppStep] Error staging application "valoremapphtml-approuter": BuildpackCompileFailed - App staging failed in the buildpack compile phase
+Download the application logs via the dmol command and check them for more information.#
+
+#2.0#2022 06 03 00:02:25.886#Z#ERROR#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+Exception caught#
+
+org.cloudfoundry.multiapps.common.SLException: A step of the process has failed. Retrying it may solve the issue.
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.executeInternal(SyncFlowableStep.java:76) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.lambda$execute$0(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.core.util.LoggingUtil.logWithCorrelationId(LoggingUtil.java:14) ~[multiapps-controller-core-1.138.0.jar:?]
+	at org.cloudfoundry.multiapps.controller.process.steps.SyncFlowableStep.execute(SyncFlowableStep.java:65) ~[multiapps-controller-process-1.138.0.jar:?]
+	at org.flowable.engine.impl.delegate.invocation.JavaDelegateInvocation.invoke(JavaDelegateInvocation.java:35) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DelegateInvocation.proceed(DelegateInvocation.java:32) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.delegate.invocation.DefaultDelegateInterceptor.handleInvocation(DefaultDelegateInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.bpmn.behavior.ServiceTaskDelegateExpressionActivityBehavior.execute(ServiceTaskDelegateExpressionActivityBehavior.java:157) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeActivityBehavior(ContinueProcessOperation.java:313) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.executeSynchronous(ContinueProcessOperation.java:170) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.continueThroughFlowNode(ContinueProcessOperation.java:125) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.agenda.ContinueProcessOperation.run(ContinueProcessOperation.java:88) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.AbstractEngineConfiguration.lambda$new$0(AbstractEngineConfiguration.java:173) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperation(CommandInvoker.java:97) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.executeOperations(CommandInvoker.java:81) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:64) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.engine.impl.interceptor.BpmnOverrideContextInterceptor.execute(BpmnOverrideContextInterceptor.java:26) ~[flowable-engine-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.TransactionContextInterceptor.execute(TransactionContextInterceptor.java:53) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:83) ~[flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.spring.SpringTransactionInterceptor.lambda$execute$0(SpringTransactionInterceptor.java:57) ~[flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) [spring-tx-5.3.18.jar:5.3.18]
+	at org.flowable.common.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:57) [flowable-spring-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:30) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:56) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.common.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:51) [flowable-engine-common-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.executeJob(ExecuteAsyncRunnable.java:127) [flowable-job-service-6.6.0.jar:6.6.0]
+	at org.flowable.job.service.impl.asyncexecutor.ExecuteAsyncRunnable.run(ExecuteAsyncRunnable.java:115) [flowable-job-service-6.6.0.jar:6.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+#2.0#2022 06 03 00:02:25.891#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-3260###
+Step "Stage App" finished#
+
+#2.0#2022 06 03 00:02:28.814#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2787###
+[StageAppStep] Executing task "stageAppTask" of process "42cc1aae-e2d0-11ec-b54e-eeee0a857e33"...#
+
+#2.0#2022 06 03 00:02:28.816#Z#INFO#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2787###
+[StageAppStep] Staging application "valoremapphtml-approuter"...#
+
+#2.0#2022 06 03 00:02:28.822#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2787###
+[StageAppStep] Creating build for package "be5e941e-cfe3-4583-bf5d-0846d64fbd3a"...#
+
+#2.0#2022 06 03 00:02:29.547#Z#DEBUG#com.sap.cloud.lm.sl.xs2.3e4f1df0-e2d0-11ec-b54e-eeee0a857e33.OPERATION.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-2787###
+Step "Stage App" finished#
+
