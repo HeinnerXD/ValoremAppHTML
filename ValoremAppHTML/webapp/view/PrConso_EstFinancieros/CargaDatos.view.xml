@@ -77,7 +77,7 @@
 								</ColumnListItem>
                                 <ColumnListItem>
                                     <cells>
-										<Link text="20. Auditoria de Procesos" press="onDowload('20 Auditoria de Procesos.xlsm')"/>
+										<Link text="20. Auditoria de Procesos" press="onDowload('20 Auditoria de Procesos.xslx')"/>
 									</cells>
                                 </ColumnListItem>
 							</items>
@@ -114,12 +114,12 @@
 								</ColumnListItem>
                                 <ColumnListItem>
 									<cells>
-										<Link text="19. Control de Saldos por Entidad" press="onDowload('19 Control de Saldos por Entidad.xlsm')"/>
+										<Link text="19. Control de Saldos por Entidad" press="onDowload('19 Control de Saldos por Entidad.xltm')"/>
 									</cells>
 								</ColumnListItem> 
                                 <ColumnListItem>
 									<cells>
-										<Link text="121. Saldo de todas las intercompañías" press="onDowload('121 Saldo de todas las intercompañías.xlsm')"/>
+										<Link text="121. Saldo de todas las intercompañías" press="onDowload('121 Saldo de todas las intercompañías.xltm')"/>
 									</cells>
 								</ColumnListItem>                      
                                 <ColumnListItem>

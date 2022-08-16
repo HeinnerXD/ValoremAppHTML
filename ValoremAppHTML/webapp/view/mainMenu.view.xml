@@ -43,7 +43,7 @@
 			<ImageContent src="sap-icon://manager-insight"/>
 		</TileContent>
 	</GenericTile>
-    <GenericTile id="TilePlaneacion" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Planeación Financiera" press="press">
+    <GenericTile id="TilePlaneacion" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Planeación Financiera" press="pressPlaneacionFinanciera">
 		<TileContent >
 			<ImageContent src="sap-icon://legend"/>
 		</TileContent>
@@ -58,7 +58,7 @@
 			<ImageContent src="sap-icon://add-coursebook"/>
 		</TileContent>
 	</GenericTile>
-	<GenericTile id="TileOtrosKoba" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Otros KOBA" press="press">
+	<GenericTile id="TileOtrosKoba" visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Otros D1" press="pressOtrosKoba">
 		<TileContent >
 			<ImageContent src="sap-icon://add-product"/>
 		</TileContent>

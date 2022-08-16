@@ -13,8 +13,8 @@ sap.ui.define([
 		 * @memberOf valoremapp.ValoremAppHTML.view.CambiarClave
 		 */
         onInit: function () {
-            var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
-
+            var urlServer = "https://valoremserverdev.cfapps.us10.hana.ondemand.com";
+            // var urlServer = "http://localhost:3000"
             var page = this.byId("page3");
             page.setShowHeader(false);
             this.oRouter = sap.ui.core.UIComponent.getRouterFor(this.getView());
@@ -33,6 +33,7 @@ sap.ui.define([
 
                 var usuario = document.getElementById("Utxtuser").value;
                 var email = document.getElementById("Utxtemail").value;
+                var checkKoba = document.getElementById("oRTenantKobaUnlock").checked;
 
                 if (usuario == "" || email == "") {
                     MessageBox.warning("Debes completar todos los campos", {
@@ -44,12 +45,11 @@ sap.ui.define([
                     });
 
                 } else {
-                    // console.log(usuario);
-                    // console.log(email);
                     sap.ui.core.BusyIndicator.show();
                     $.post(urlServer + "/api/unlockUser", {
                         user: usuario,
                         email: email,
+                        checkKoba: checkKoba
                     }).done(function () {
                         sap.ui.core.BusyIndicator.hide();
                         MessageBox.information("Usuario desbloqueado con exito", {

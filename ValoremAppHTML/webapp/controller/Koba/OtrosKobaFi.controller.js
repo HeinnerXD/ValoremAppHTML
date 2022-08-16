@@ -4,10 +4,10 @@ sap.ui.define([
     "sap/m/MessageBox"
 ], function (Controller, History) {
 	"use strict";
-	return Controller.extend("valoremapp.ValoremAppHTML.controller.PrConso_EstFinancieros.Consolidacion", {
+	return Controller.extend("valoremapp.ValoremAppHTML.controller.Koba.OtrosKobaFi", {
 		onInit: function () {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this.getView());
-            this.oRouter.getRoute("FConsolidación").attachMatched(this._onRouteMatched, this);
+            this.oRouter.getRoute("OtrosKobaFi").attachMatched(this._onRouteMatched, this);
 		},
         _onRouteMatched: function (oEvent) {
             this.arr = JSON.parse(oEvent.getParameter("arguments").roles);
@@ -16,7 +16,7 @@ sap.ui.define([
             var that = this;
 			var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
-			that.oRouter.navTo("mainMenuEstFinanciero",{roles: JSON.stringify(this.arr)}, true);
+			that.oRouter.navTo("OtrosKoba",{roles: JSON.stringify(this.arr)}, true);
 		},
 		handleUserItemPressed : function () {
 			var that = this;
@@ -30,10 +30,10 @@ sap.ui.define([
             var oResourceBundle = oView.getModel("i18n").getResourceBundle();
             var url = oResourceBundle.getText("urlServer").toString().trim();
             sap.ui.core.BusyIndicator.show();
-            $.post(urlServer + "/api/downloadFile", {
+            $.post(urlServer + "/api/downloadFileRoot", {
                 name: "DMSShuttle",
                 username: "lgarcia@valorem.com.co",
-                url: "01. CONSOLIDACION/PRODUCCION/4. Consolidación/",
+                url: "01. TENANT VALOREM/04. CARACOL/01. INFORME DE JUNTA",
                 fileName: filename
             }).done(function (data) {
                 
@@ -43,49 +43,15 @@ sap.ui.define([
                         .done(function (response) {
                             
                             sap.ui.core.BusyIndicator.hide();
+
                         }).fail(function (xhr, ajaxOptions, thrownError) {
+
                             sap.ui.core.BusyIndicator.hide();
+
                         });
                 });
             }).fail(function (xhr, ajaxOptions, thrownError) {
-
                 sap.ui.core.BusyIndicator.hide();
-
-                MessageBox.error("Error: " + xhr.responseText, {
-                    actions: [MessageBox.Action.OK],
-                    emphasizedAction: MessageBox.Action.OK,
-                    onClose: function (sAction) { }
-                });
-
-            });
-        },
-        onDowloadReal: function (filename) {
-            var urlServer = "https://valoremserverdev.cfapps.us10.hana.ondemand.com";
-            var oView = this.getView();
-            var oResourceBundle = oView.getModel("i18n").getResourceBundle();
-            var url = oResourceBundle.getText("urlServer").toString().trim();
-            sap.ui.core.BusyIndicator.show();
-            $.post(urlServer + "/api/downloadFile", {
-                name: "DMSShuttle",
-                username: "lgarcia@valorem.com.co",
-                url: "03. INFORME DE JUNTA/PRODUCCION/01. Cargue Inicial/1.2. Real",
-                fileName: filename
-            }).done(function (data) {
-                
-                window.open(url + '/' + filename);
-                jQuery.sap.delayedCall(650, this, function () {
-                    $.post(urlServer + "/api/cleanServer")
-                        .done(function (response) {
-                            
-                            sap.ui.core.BusyIndicator.hide();
-                        }).fail(function (xhr, ajaxOptions, thrownError) {
-                            sap.ui.core.BusyIndicator.hide();
-                        });
-                });
-            }).fail(function (xhr, ajaxOptions, thrownError) {
-
-                sap.ui.core.BusyIndicator.hide();
-
                 MessageBox.error("Error: " + xhr.responseText, {
                     actions: [MessageBox.Action.OK],
                     emphasizedAction: MessageBox.Action.OK,

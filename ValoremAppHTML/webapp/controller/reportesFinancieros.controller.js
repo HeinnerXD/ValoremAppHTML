@@ -26,7 +26,6 @@ sap.ui.define([
             this.arr = JSON.parse(oEvent.getParameter("arguments").roles);
             if (this.arr !== null) {
                 this.resetTiles();
-                // console.log(this.arr);
                 this.arr.forEach(element => {
                     if (element === "Z_PORTAL_COMP_EEFF") { //Z_PORTAL_COMP_EEFF
                         this.TileEstadoFinanciero.setVisible(true);

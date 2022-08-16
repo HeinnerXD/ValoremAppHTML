@@ -34,12 +34,12 @@
 							<items>
 								<ColumnListItem>
 									<cells>
-										<Link text="41. Rpte Eliminacion Total x Fuente x Cia" press="onDowload('41 Rpte Eliminacion Total x Fuente x Cia.xlsm')"/>
+										<Link text="41. Rpte Eliminacion Total x Fuente x Cia" press="onDowload('41 Rpte Eliminacion Total x Fuente x Cia.xltm')"/>
 									</cells>
 								</ColumnListItem>
                                 <ColumnListItem>
 									<cells>
-										<Link text="42. Rpte Eliminación Total x Cuenta entre Cias" press="onDowload('42 Rpte Eliminación Total x Cuenta entre Cias.xlsm')"/>
+										<Link text="42. Rpte Eliminación Total x Cuenta entre Cias" press="onDowload('42 Rpte Eliminación Total x Cuenta entre Cias.xltm')"/>
 									</cells>
 								</ColumnListItem>
                                 <ColumnListItem>
@@ -49,17 +49,17 @@
 								</ColumnListItem>
                                   <ColumnListItem>
 									<cells>
-										<Link text="46 Rpte Detalle Mvto x Cada Fuentes Entre Cias." press="onDowload('46 Rpte Detalle Mvto x Cada Fuentes Entre Cias.xlsm')"/>
+										<Link text="46 Rpte Detalle Mvto x Cada Fuentes Entre Cias." press="onDowload('46 Rpte Detalle Mvto x Cada Fuentes Entre Cias.xltm')"/>
 									</cells>
 								</ColumnListItem>
                                   <ColumnListItem>
 									<cells>
-										<Link text="412. Rpte Eliminaciones Patrimoniales x Cia" press="onDowload('412 Rpte Eliminaciones Patrimoniales x Cia.xlsm')"/>
+										<Link text="412. Rpte Eliminaciones Patrimoniales x Cia" press="onDowload('412 Rpte Eliminaciones Patrimoniales x Cia.xltm')"/>
 									</cells>
 								</ColumnListItem>
                                 <ColumnListItem>
 									<cells>
-										<Link text="413. Rpte Bce Eliminac x Fuente x Cuenta en Cada Cia" press="onDowload('413 Rpte Bce Eliminac x Fuente x Cuenta en Cada Cia.xlsm')"/>
+										<Link text="413. Rpte Bce Eliminac x Fuente x Cuenta en Cada Cia" press="onDowload('413 Rpte Bce Eliminac x Fuente x Cuenta en Cada Cia.xltm')"/>
 									</cells>
 								</ColumnListItem>
                                 <ColumnListItem>

@@ -22,8 +22,8 @@ sap.ui.define([
             document.getElementById("txtpass").value = "";
         },
         inicializar: function () {
-            // var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
-            var urlServer = "http://localhost:3000"
+            var urlServer = "https://valoremserverdev.cfapps.us10.hana.ondemand.com";
+            // var urlServer = "http://localhost:3000"
             var page = this.byId("page");
             page.setShowHeader(false);
             var that = this;
@@ -31,8 +31,6 @@ sap.ui.define([
             this.oRouter.getRoute("login").attachPatternMatched(this._onObjectMatched, this);
             if (boolean)
                 $.get(urlServer, function (data) {
-                    // console.log('Entró a la petición');
-                    // console.log(JSON.stringify(data));
                 });
             $(document).on("click", "#btnRegistrar", function (event) {
                 var usuario = document.getElementById("txtusuario").value;
@@ -47,32 +45,24 @@ sap.ui.define([
                         }
                     });
                 } else {
-                    // console.log(boolean);
                     sap.ui.core.BusyIndicator.show();
                     $.post(urlServer + "/api/connect", {
                         user: usuario,
                         password: pass
-
-                        // function (data, status) {
-                        // 	alert("Data: " + data + "\nStatus: " + status);
                     }).done(function (data) {
-                        // console.log(data);
+                        ;
                         var roles = [];
                         data.role.forEach(element => {
                             roles.push(element.ROLE_NAME);
                         });
                         sap.ui.core.BusyIndicator.hide();
-                        // console.log(data.data[0]);
                         if (data.data.length === 0) {
-                            // console.log("ENVIANDO FALSE");
                             localStorage.setItem('periodos', "false")
                             localStorage.setItem('periodosStatus', "false")
                             that.oRouter.navTo("mainMenu", { roles: JSON.stringify(roles) }, true);
                         } else {
-                            // console.log("ENVIANDO ARRAY");
                             localStorage.setItem('periodos', JSON.stringify(data.data[0]))
                             localStorage.setItem('periodosStatus', JSON.stringify(data.periodos[0]))
-                            console.log(data.status)
                             const userStatusData = data.status[0]
                             MessageBox.information(`Estado del usuario ${userStatusData.USUARIO}: ${userStatusData.NM_ESTADO} `, {
                                 details: `Fecha de vencimiento: ${userStatusData.FECHA_VENCIMIENTO}`,
@@ -107,7 +97,6 @@ sap.ui.define([
                 that.oRouter.navTo("CambiarClave", true);
             });
             $(document).on("click", "#btnUnlockUser", function (event) {
-                // console.log("Usando la función de desbloquear usuario");
                 that.oRouter.navTo("UnlockUser", true);
             });
 

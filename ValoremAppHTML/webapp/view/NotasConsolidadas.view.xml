@@ -107,6 +107,21 @@
 										<Link text="RP14_Flujo de Caja Indirecto_SS_Consolidado" press="onDowload('RP14_EFE_INDIRECTO_NIIF_CONSOLIDADO.xlsm')"/>
 									</cells>
 								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP15_OPTATIVAS_CXC_CONSOLIDADO" press="onDowload('RP15_OPTATIVAS_CXC_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RP16_OPTATIVAS_CXP_CONSOLIDADO" press="onDowload('RP16_OPTATIVAS_CXP_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="PAGOS_ARRENDAMIENTOS_CONSOLIDADO" press="onDowload('PAGOS_ARRENDAMIENTOS_CONSOLIDADO.xlsm')"/>
+									</cells>
+								</ColumnListItem>
 							</items>
 						</Table>
 					</IconTabFilter>

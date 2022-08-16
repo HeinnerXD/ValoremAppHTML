@@ -264,6 +264,48 @@
                     "target": [
                         "FReportes"
                     ]
+                },
+                {
+                    "name": "OtrosKoba",
+                    "pattern": "OtrosKoba/{roles}",
+                    "target": [
+                        "OtrosKoba"
+                    ]
+                },
+                {
+                    "name": "OtrosKobaFi",
+                    "pattern": "OtrosKobaFi/{roles}",
+                    "target": [
+                        "OtrosKobaFi"
+                    ]
+                },
+                {
+                    "name": "OtrosKobaMm",
+                    "pattern": "OtrosKobaMm/{roles}",
+                    "target": [
+                        "OtrosKobaMm"
+                    ]
+                },
+                {
+                    "name": "PlaneacionFinanciera",
+                    "pattern": "PlaneacionFinanciera/{roles}",
+                    "target": [
+                        "PlaneacionFinanciera"
+                    ]
+                },
+                {
+                    "name": "PlaneacionFinancieraJunta",
+                    "pattern": "PlaneacionFinancieraJunta/{roles}",
+                    "target": [
+                        "PlaneacionFinancieraJunta"
+                    ]
+                },
+                {
+                    "name": "PlaneacionFinancieraEva",
+                    "pattern": "PlaneacionFinancieraEva/{roles}",
+                    "target": [
+                        "PlaneacionFinancieraEva"
+                    ]
                 }
             ],
             "targets": {
@@ -468,6 +510,54 @@
                     "parent": "login",
                     "viewLevel": 26,
                     "viewPath": "valoremapp.ValoremAppHTML.view.PrConso_EstFinancieros"
+                },
+                "OtrosKoba": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "OtrosKoba",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.Koba"
+                },
+                "OtrosKobaFi": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "OtrosKobaFi",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.Koba"
+                },
+                "OtrosKobaMm": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "OtrosKobaMm",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.Koba"
+                },
+                "PlaneacionFinanciera": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "PlaneacionFinanciera",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PlaneacionFinanciera"
+                },
+                "PlaneacionFinancieraJunta": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "PlaneacionFinancieraJunta",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PlaneacionFinanciera"
+                },
+                "PlaneacionFinancieraEva": {
+                    "controlId": "",
+                    "viewType": "XML",
+                    "viewName": "PlaneacionFinancieraEva",
+                    "parent": "login",
+                    "viewLevel": 26,
+                    "viewPath": "valoremapp.ValoremAppHTML.view.PlaneacionFinanciera"
                 }
             }
         }

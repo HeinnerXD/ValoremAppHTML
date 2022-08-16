@@ -28,7 +28,6 @@ sap.ui.define([
             this.arr = JSON.parse(oEvent.getParameter("arguments").roles);
             if (this.arr !== null) {
                 this.resetTiles();
-                // console.log(this.arr);
                 this.arr.forEach(element => {
                     if (element === "Z_PORTAL_CONSOLIDACION") { //Z_PORTAL_CONSOLIDACION
                         this.TileConsolidacion.setVisible(true);
@@ -101,6 +100,12 @@ sap.ui.define([
         },
         press_informesCaracol: function (){
             this.oRouter.navTo("InformesCaracol", {roles: JSON.stringify(this.arr)}, true);    
+        },
+        pressOtrosKoba: function () {
+            this.oRouter.navTo("OtrosKoba", {roles: JSON.stringify(this.arr)}, true);
+        },
+        pressPlaneacionFinanciera: function () {
+            this.oRouter.navTo("PlaneacionFinanciera", {roles: JSON.stringify(this.arr)}, true);
         },
         resetTiles: function () {
             this.TileConsolidacion.setVisible(false);

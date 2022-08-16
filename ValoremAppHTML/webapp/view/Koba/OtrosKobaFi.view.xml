@@ -1,0 +1,122 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	controllerName="valoremapp.ValoremAppHTML.controller.Koba.OtrosKobaFi" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Otros D1 - FI">
+		<customHeader>
+		    <Bar class="barLogo">
+		        <contentLeft>
+		            <Button   type="Back" press="handlePressConfiguration"/>
+		            <Image src="./img/analitica.png" width="140px" height="35px" />
+		        </contentLeft>
+		
+		        <contentRight>
+		            <Button icon="sap-icon://log" text="Log off" type="Transparent" press="handleUserItemPressed"/>
+		        </contentRight>		
+		    </Bar>
+		</customHeader>
+		<content>
+			<Bar>
+		        <contentLeft>
+		            <Text text = "Otros D1 - FI"></Text>
+		        </contentLeft>
+		    </Bar>
+			<IconTabBar class="sapUiResponsiveContentPadding" selectedKey="Crear" select="onSelectCreate" expand="onExpandAnyFilter">
+				<items>
+					<IconTabFilter icon="sap-icon://create-form" text="Activos Fijos" key="ActivosFijos" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="ARRENDAMIENTOS" press="onDowload('ARRENDAMIENTOS.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="CONCILIACION ACTIVOS v2" press="onDowload('CONCILIACION ACTIVOS v2.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="RENTING" press="onDowload('RENTING.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabFilter icon="sap-icon://create-form" text="Journal Entries" key="JournalEntries" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="SHC-KB-Verificacion Journal Entries V1" press="onDowload('SHC-KB-Verificacion Journal Entries V1.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabFilter icon="sap-icon://create-form" text="Monthly por Tienda" key="MonthlyTienda" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+                                <ColumnListItem>
+									<cells>
+										<Link text="SHC-KB-BD Monthly por TIenda v2" press="onDowload('SHC-KB-BD Monthly por TIenda v2.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="SHC-KB-BD-NewMonthly GastosR V1" press="onDowload('SHC-KB-BD-NewMonthly GastosR V1.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="SHC-KB-BD-NewMonthly para Regionales v3" press="onDowload('SHC-KB-BD-NewMonthly para Regionales v3.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="SHC-KB-BD-NewMonthly v7" press="onDowload('SHC-KB-BD-NewMonthly v7.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+                                <ColumnListItem>
+									<cells>
+										<Link text="Verificación Cuentas" press="onDowload('Verificación Cuentas.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+                    <IconTabFilter icon="sap-icon://create-form" text="Reporte por Cuenta" key="ReporteCuenta" design="Horizontal">
+						<Table>
+							<columns>
+								<Column width="12em">
+									<Text text="DESCRIPCIÓN"/>
+								</Column>
+							</columns>
+							<items>
+                                <ColumnListItem>
+									<cells>
+										<Link text="KOBA-Reporte x Cuenta V3" press="onDowload('KOBA-Reporte x Cuenta V3.xlsm')"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

@@ -25,7 +25,7 @@ sap.ui.define([
 			that.oRouter.navTo("login", true);
         },
         onDowload: function (filename) {
-            var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
+            var urlServer = "https://valoremserverdev.cfapps.us10.hana.ondemand.com";
             var oView = this.getView();
             var oResourceBundle = oView.getModel("i18n").getResourceBundle();
             var url = oResourceBundle.getText("urlServer").toString().trim();
@@ -36,12 +36,12 @@ sap.ui.define([
                 url: "01. CONSOLIDACION/PRODUCCION/2. Carga de Datos/",
                 fileName: filename
             }).done(function (data) {
-                console.log(data)
+                
                 window.open(url + '/' + filename);
                 jQuery.sap.delayedCall(650, this, function () {
                     $.post(urlServer + "/api/cleanServer")
                         .done(function (response) {
-                            console.log(response)
+                            
                             sap.ui.core.BusyIndicator.hide();
                         }).fail(function (xhr, ajaxOptions, thrownError) {
                             sap.ui.core.BusyIndicator.hide();
@@ -60,7 +60,7 @@ sap.ui.define([
             });
         },
         onDowloadReal: function (filename) {
-            var urlServer = "https://valoremservernodejs.cfapps.us10.hana.ondemand.com";
+            var urlServer = "https://valoremserverdev.cfapps.us10.hana.ondemand.com";
             var oView = this.getView();
             var oResourceBundle = oView.getModel("i18n").getResourceBundle();
             var url = oResourceBundle.getText("urlServer").toString().trim();
@@ -71,12 +71,12 @@ sap.ui.define([
                 url: "03. INFORME DE JUNTA/PRODUCCION/01. Cargue Inicial/1.2. Real",
                 fileName: filename
             }).done(function (data) {
-                console.log(data)
+                
                 window.open(url + '/' + filename);
                 jQuery.sap.delayedCall(650, this, function () {
                     $.post(urlServer + "/api/cleanServer")
                         .done(function (response) {
-                            console.log(response)
+                            
                             sap.ui.core.BusyIndicator.hide();
                         }).fail(function (xhr, ajaxOptions, thrownError) {
                             sap.ui.core.BusyIndicator.hide();
